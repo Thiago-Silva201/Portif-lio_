@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GTA VI — Compre Agora, Pague Depois | Campanha Oficial</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(180deg, #16062c 0%, #24093d 50%, #120424 100%);
+      color: #ffffff;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 8%;
+      background: rgba(22, 6, 44, 0.92);
+      border-bottom: 2px solid #ff1e8a;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+      color: #ffffff;
+    }
+
+    .logo span {
+      background: linear-gradient(135deg, #ff1e8a, #ff6a00, #ffd000);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .navbar nav a {
+      color: #f3d9ff;
+      text-decoration: none;
+      margin-left: 24px;
+      font-weight: 700;
+      transition: 0.3s;
+    }
+
+    .navbar nav a:hover,
+    .navbar nav a.active {
+      color: #00f5d4;
+      text-shadow: 0 0 12px #00f5d4;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: center;
+      gap: 40px;
+      padding: 70px 8%;
+      background:
+        radial-gradient(circle at 85% 20%, rgba(255, 208, 0, 0.35), transparent 40%),
+        radial-gradient(circle at 15% 80%, rgba(0, 245, 212, 0.25), transparent 45%),
+        linear-gradient(135deg, #2b094e 0%, #7a1268 45%, #d9385a 80%, #ff7b00 100%);
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(18, 4, 36, 0.8);
+      border: 1.5px solid #00f5d4;
+      color: #00f5d4;
+      padding: 7px 16px;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      margin-bottom: 18px;
+      box-shadow: 0 0 15px rgba(0, 245, 212, 0.45);
+    }
+
+    .hero-text h1 {
+      font-size: 3.5rem;
+      line-height: 1.05;
+      font-weight: 900;
+      margin-bottom: 14px;
+    }
+
+    .hero-text h1 span {
+      background: linear-gradient(90deg, #ffd000, #ff6a00, #ff1e8a);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .slogan {
+      font-size: 1.25rem;
+      color: #ffd000;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .persuasive {
+      color: #fff3fc;
+      font-size: 1.05rem;
+      margin-bottom: 26px;
+    }
+
+    .promo-box {
+      background: linear-gradient(135deg, rgba(24, 6, 48, 0.94), rgba(68, 12, 74, 0.92));
+      border: 2px solid #ff1e8a;
+      border-left: 6px solid #00f5d4;
+      padding: 20px 24px;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      box-shadow: 0 0 25px rgba(255, 30, 138, 0.45);
+    }
+
+    .promo-box h2 {
+      color: #00f5d4;
+      font-size: 1.3rem;
+      font-weight: 900;
+      margin-bottom: 6px;
+    }
+
+    .promo-box strong {
+      color: #ffd000;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(90deg, #ff1e8a, #ff6a00, #ffd000);
+      color: #16062c;
+      text-decoration: none;
+      padding: 16px 32px;
+      border-radius: 8px;
+      font-weight: 900;
+      letter-spacing: 0.8px;
+      box-shadow: 0 0 25px rgba(255, 30, 138, 0.75);
+      transition: 0.3s;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px) scale(1.02);
+    }
+
+    .btn-secondary {
+      background: rgba(18, 4, 36, 0.7);
+      border: 2px solid #00f5d4;
+      color: #00f5d4;
+      text-decoration: none;
+      padding: 14px 26px;
+      border-radius: 8px;
+      font-weight: 800;
+      transition: 0.3s;
+    }
+
+    .btn-secondary:hover {
+      background: #00f5d4;
+      color: #16062c;
+    }
+
+    .hero-image {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 3px solid #ffd000;
+      box-shadow: 0 0 30px rgba(255, 30, 138, 0.7);
+    }
+
+    .hero-image img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .hero-image .caption {
+      position: absolute;
+      bottom: 14px;
+      right: 14px;
+      background: linear-gradient(90deg, #ff1e8a, #6a00f4);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: #ffffff;
+    }
+
+    .highlights {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+      padding: 55px 8%;
+      background: #16062c;
+    }
+
+    .card {
+      background: linear-gradient(145deg, #270b47, #190630);
+      padding: 26px;
+      border-radius: 14px;
+      border-top: 3px solid #00f5d4;
+      border-bottom: 3px solid #ff1e8a;
+    }
+
+    .card h3 {
+      color: #ffd000;
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 26px;
+      background: #100320;
+      color: #d8b4fe;
+      font-size: 0.92rem;
+      border-top: 2px solid #ff1e8a;
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+      .hero-text h1 {
+        font-size: 2.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Menu de navegação compartilhado entre as 4 páginas -->
+  <header class="navbar">
+    <div class="logo">GTA <span>VI</span></div>
+    <nav>
+      <a href="index.html" class="active">Início</a>
+      <a href="loja.html">Loja</a>
+      <a href="midia.html">Mídia & Galeria</a>
+      <a href="sobre.html">Sobre o Jogo</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Seção Principal (Campanha + Imagem de Destaque) -->
+    <section class="hero">
+      <div class="hero-text">
+        <span class="badge">LANÇAMENTO MUNDIAL • 19 DE NOVEMBRO DE 2026</span>
+        <h1>GRAND THEFT AUTO <span>VI</span></h1>
+        <p class="slogan">Bem-vindo a Leonida. Onde o sol nunca se põe no crime e cada escolha define o seu império.</p>
+
+        <p class="persuasive">
+          Explore as ruas iluminadas por neon de Vice City e os pântanos selvagens de Leonida no maior mundo aberto já criado. Viva a história intensa de Lucia e Jason com gráficos de nova geração e liberdade total.
+        </p>
+
+        <!-- Destaque da Campanha: Compre Agora e Pague Depois -->
+        <div class="promo-box">
+          <h2>🔥 COMPRE AGORA, PAGUE DEPOIS</h2>
+          <p>Jogue no primeiro dia com <strong>R$ 0,00 de entrada</strong>. Primeira parcela só daqui a <strong>60 dias</strong> ou em até 12x sem juros no boleto digital.</p>
+        </div>
+
+        <!-- Chamadas para Ação (CTA) -->
+        <div class="cta-buttons">
+          <a href="loja.html" class="btn-primary">GARANTIR MINHA CÓPIA AGORA</a>
+          <a href="midia.html" class="btn-secondary">ASSISTIR AO TRAILER</a>
+        </div>
+      </div>
+
+      <!-- Imagem de Destaque -->
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=900&q=80" alt="Paisagem neon inspirada em Vice City ao pôr do sol">
+        <span class="caption">Vice City • Estado de Leonida</span>
+      </div>
+    </section>
+
+    <!-- Faixa de Vantagens e Diferenciais do Jogo -->
+    <section class="highlights">
+      <div class="card">
+        <h3>💳 Zero Entrada Hoje</h3>
+        <p>Ative o Passe Leonida Pay na loja e comece a jogar no lançamento pagando a primeira parcela só em 2027.</p>
+      </div>
+      <div class="card">
+        <h3>🌴 Mundo Vivo e Gigante</h3>
+        <p>De praias paradisíacas a pântanos perigosos, cada bairro de Leonida reage às suas ações em tempo real.</p>
+      </div>
+      <div class="card">
+        <h3>🔥 Dupla Protagonista</h3>
+        <p>Alterne entre Lucia e Jason em assaltos planejados, perseguições em alta velocidade e decisões arriscadas.</p>
+      </div>
+      <div class="card">
+        <h3>🎁 Bônus Exclusivo</h3>
+        <p>Garanta hoje e receba o pacote <em>Vintage

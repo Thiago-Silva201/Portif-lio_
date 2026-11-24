@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grand Theft Auto VI — Mídia & Galeria Oficial | Parte 03</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-dark: #09040e;
+      --bg-card: #160922;
+      --bg-glass: rgba(22, 9, 34, 0.88);
+      --neon-pink: #ff3399;
+      --sunset-coral: #ff6b9d;
+      --sunset-orange: #ff9e00;
+      --vice-purple: #5a189a;
+      --electric-cyan: #00f5d4;
+      --text-main: #ffffff;
+      --text-muted: #c7b8d6;
+      --gradient-vice: linear-gradient(135deg, #ff3399 0%, #ff9e00 50%, #5a189a 100%);
+      --gradient-title: linear-gradient(90deg, #ff6b9d, #ff9e00, #00f5d4);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+      background-image:
+        radial-gradient(circle at 15% 15%, rgba(255, 51, 153, 0.18), transparent 40%),
+        radial-gradient(circle at 85% 30%, rgba(0, 245, 212, 0.14), transparent 40%),
+        radial-gradient(circle at 50% 85%, rgba(90, 24, 154, 0.25), transparent 50%);
+    }
+
+    /* ================= NAVBAR ================= */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(9, 4, 14, 0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255, 51, 153, 0.35);
+      padding: 0.9rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+    }
+
+    .brand-logo {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 1.45rem;
+      letter-spacing: -1px;
+      color: #fff;
+      text-transform: uppercase;
+      line-height: 0.95;
+    }
+
+    .brand-vi {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.4rem;
+      background: var(--gradient-vice);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 0 12px rgba(255, 51, 153, 0.65));
+    }
+
+    nav {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-item {
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.5rem 0.95rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      transition: all 0.25s ease;
+    }
+
+    .nav-item:hover {
+      color: #fff;
+      border-color: rgba(255, 107, 157, 0.45);
+    }
+
+    .nav-item.active {
+      color: #fff;
+      background: linear-gradient(90deg, rgba(255, 51, 153, 0.28), rgba(90, 24, 154, 0.5));
+      border-color: var(--neon-pink);
+      box-shadow: 0 0 16px rgba(255, 51, 153, 0.4);
+    }
+
+    .badge-challenge {
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 0.38rem 0.85rem;
+      border-radius: 6px;
+      background: rgba(0, 245, 212, 0.14);
+      border: 1px solid var(--electric-cyan);
+      color: var(--electric-cyan);
+    }
+
+    /* ================= HERO ================= */
+    .hero {
+      padding: 3.5rem 5% 2.5rem;
+      text-align: center;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--sunset-orange);
+      margin-bottom: 0.7rem;
+    }
+
+    .hero h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      text-transform: uppercase;
+      line-height: 1.08;
+      margin-bottom: 1rem;
+      background: var(--gradient-title);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      max-width: 720px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* ================= TRAILER OFICIAL ================= */
+    .trailer-section {
+      max-width: 1200px;
+      margin: 0 auto 4rem;
+      padding: 0 5%;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .section-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 1.45rem;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+
+    .section-title span {
+      width: 6px;
+      height: 24px;
+      border-radius: 3px;
+      background: var(--gradient-vice);
+      display: inline-block;
+    }
+
+    .release-pill {
+      background: var(--gradient-vice);
+      padding: 0.45rem 1rem;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .trailer-wrapper {
+      position: relative;
+      border-radius: 18px 18px 0 0;
+      overflow: hidden;
+      border: 2px solid rgba(255, 51, 153, 0.5);
+      border-bottom: none;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.75);
+      background: #000;
+      aspect-ratio: 16 / 9;
+    }
+
+    .trailer-wrapper video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .trailer-info-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--bg-card);
+      padding: 1.1rem 1.5rem;
+      border-radius: 0 0 18px 18px;
+      border: 2px solid rgba(255, 51, 153, 0.5);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .trailer-meta strong {
+      display: block;
+      font-size: 1rem;
+      color: #fff;
+      margin-bottom: 0.2rem;
+    }
+
+    .trailer-meta small {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    /* ================= GALERIA ================= */
+    .gallery-section {
+      max-width: 1200px;
+      margin: 0 auto 5rem;
+      padding: 0 5%;
+    }
+
+    .controls-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      background: var(--bg-glass);
+      padding: 1rem 1.25rem;
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .filter-group, .view-group {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-control {
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--text-muted);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      padding: 0.55rem 1.1rem;
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .btn-control:hover {
+      border-color: var(--sunset-coral);
+      color: #fff;
+    }
+
+    .btn-control.active {
+      background: var(--gradient-vice);
+      color: #fff;
+      border-color: transparent;
+      box-shadow: 0 4px 16px rgba(255, 51, 153, 0.4);
+    }
+
+    /* ================= GRADE DE IMAGENS ================= */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .media-card {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      background: var(--bg-card);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      cursor: pointer;
+      transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+    }
+
+    .media-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--neon-pink);
+      box-shadow: 0 15px 35px rgba(255, 51, 153, 0.3);
+    }
+
+    .media-card.featured {
+      grid-column: 1 / -1;
+    }
+
+    .media-thumb-box {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      background: #12061c;
+    }
+
+    .media-card.featured .media-thumb-box {
+      aspect-ratio: 21 / 9;
+    }
+
+    .media-thumb-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+      display: block;
+    }
+
+    .media-card:hover .media-thumb-box img {
+      transform: scale(1.06);
+    }
+
+    .zoom-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(9, 4, 14, 0.85);
+      color: var(--electric-cyan);
+      border: 1px solid rgba(0, 245, 212, 0.5);
+      padding: 0.38rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      opacity: 0;
+      transform: translateY(-5px);
+      transition: all 0.25s ease;
+    }
+
+    .media-card:hover .zoom-badge {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .card-body {
+      padding: 1.2rem 1.35rem;
+    }
+
+    .card-category {
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--sunset-orange);
+      margin-bottom: 0.35rem;
+      display: block;
+    }
+
+    .card-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 800;
+      margin-bottom: 0.4rem;
+    }
+
+    .card-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+
+    /* ================= MODO CARROSSEL ================= */
+    .carousel-container {
+      display: none;
+      background: var(--bg-card);
+      border-radius: 18px;
+      border: 1px solid rgba(255, 51, 153, 0.4);
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+    }
+
+    .carousel-container.active {
+      display: block;
+    }
+
+    .carousel-stage {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #000;
+      overflow: hidden;
+    }
+
+    .carousel-stage img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      cursor: zoom-in;
+    }
+
+    .carousel-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(9, 4, 14, 0.82);
+      color: #fff;
+      border: 1px solid var(--neon-pink);
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      font-size: 1.3rem;
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      transition: all 0.2s ease;
+      z-index: 5;
+    }
+
+    .carousel-arrow:hover {
+      background: var(--neon-pink);
+      transform: translateY(-50%) scale(1.08);
+    }
+
+    .carousel-arrow.prev { left: 16px; }
+    .carousel-arrow.next { right: 16px; }
+
+    .carousel-caption {
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .carousel-thumbs {
+      display: flex;
+      gap: 0.75rem;
+      padding: 1rem 1.5rem 1.5rem;
+      overflow-x: auto;
+    }
+
+    .c-thumb {
+      width: 115px;
+      height: 66px;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 2px solid transparent;
+      opacity: 0.55;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: all 0.2s ease;
+    }
+
+    .c-thumb.active, .c-thumb:hover {
+      opacity: 1;
+      border-color: var(--electric-cyan);
+      transform: scale(1.04);
+    }
+
+    .c-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* ================= LIGHTBOX (AMPLIAR E TROCAR) ================= */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(5, 2, 10, 0.96);
+      backdrop-filter: blur(12px);
+      z-index: 999;
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 1.25rem 2rem;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lb-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .lb-counter {
+      font-weight: 700;
+      color: var(--electric-cyan);
+      font-size: 0.95rem;
+    }
+
+    .lb-actions {
+      display: flex;
+      gap: 0.6rem;
+    }
+
+    .lb-btn {
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      padding: 0.5rem 0.95rem;
+      border-radius: 8px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .lb-btn:hover {
+      background: var(--neon-pink);
+      border-color: var(--neon-pink);
+    }
+
+    .lb-viewport {
+      position: relative;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      margin: 1rem 0;
+    }
+
+    .lb-viewport img {
+      max-width: 90%;
+      max-height: 72vh;
+      border-radius: 12px;
+      box-shadow: 0 0 50px rgba(255, 51, 153, 0.35);
+      transition: transform 0.3s ease;
+      cursor: zoom-in;
+    }
+
+    .lb-viewport img.zoomed {
+      transform: scale(1.65);
+      cursor: zoom-out;
+    }
+
+    .lb-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(22, 9, 34, 0.88);
+      border: 1px solid var(--neon-pink);
+      color: #fff;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      font-size: 1.4rem;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    .lb-nav:hover {
+      background: var(--neon-pink);
+    }
+
+    .lb-nav.prev { left: 10px; }
+    .lb-nav.next { right: 10px; }
+
+    .lb-bottom {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .lb-bottom h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.2rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .lb-bottom p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* ================= FOOTER ================= */
+    footer {
+      border-top: 1px solid rgba(255, 51, 153, 0.28);
+      background: #06020a;
+      padding: 2.5rem 5%;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    footer strong {
+      color: #fff;
+    }
+
+    @media (max-width: 768px) {
+      .media-card.featured .media-thumb-box {
+        aspect-ratio: 16 / 9;
+      }
+      .lb-viewport img.zoomed {
+        transform: scale(1.35);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- CABEÇALHO -->
+  <header>
+    <a href="#" class="brand">
+      <div class="brand-logo">Grand<br>Theft<br>Auto</div>
+      <div class="brand-vi">VI</div>
+    </a>
+
+    <nav aria-label="Navegação do Game Web Challenge">
+      <a href="#inicio" class="nav-item">01. Início</a>
+      <a href="#loja" class="nav-item">02. Loja</a>
+      <a href="#galeria" class="nav-item active">03. Mídia & Galeria</a>
+      <a href="#sobre" class="nav-item">04. Sobre o Jogo</a>
+    </nav>
+
+    <span class="badge-challenge">Parte 03 • Mostrar / Envolver</span>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <span class="hero-tag">Bem-vindo ao Estado de Leonida</span>
+    <h1>Galeria Oficial & Trailer</h1>
+    <p>
+      Explore as capturas de ecrã em alta definição, artes oficiais de Jason e Lucia e o trailer cinematográfico
+      pelas praias néon de Vice City. Clique em qualquer imagem para ampliar ou alternar entre as cenas.
+    </p>
+  </section>
+
+  <!-- TRAILER OFICIAL -->
+  <section class="trailer-section" aria-label="Trailer Oficial">
+    <div class="section-header">
+      <h2 class="section-title"><span></span> Trailer Oficial — Leonida & Vice City</h2>
+      <span class="release-pill">19 de Novembro de 2026</span>
+    </div>
+
+    <div class="trailer-wrapper">
+      <video controls poster="capa.jpg.jpg" preload="metadata">
+        <source src="trailer.mp4.mp4" type="video/mp4" />
+        <source src="trailer.mp4" type="video/mp4" />
+        O seu navegador não suporta a reprodução de vídeo HTML5.
+      </video>
+    </div>
+
+    <div class="trailer-info-bar">
+      <div class="trailer-meta">
+        <strong>Grand Theft Auto VI — Trailer Oficial</strong>
+        <small>Jason Duval e Lucia Caminos enfrentam uma conspiração criminosa por todo o estado de Leonida.</small>
+      </div>
+      <button class="btn-control active" onclick="openLightbox(0)">Ampliar Arte da Capa</button>
+    </div>
+  </section>
+
+  <!-- GALERIA INTERATIVA -->
+  <section class="gallery-section" id="galeria">
+    <div class="section-header">
+      <h2 class="section-title"><span></span> Capturas de Ecrã & Artes Oficiais</h2>
+    </div>
+
+    <div class="controls-bar">
+      <div class="filter-group" role="group" aria-label="Filtrar categoria">
+        <button class="btn-control active" data-filter="todos">Todas as Mídias (5)</button>
+        <button class="btn-control" data-filter="arte">Arte Oficial</button>
+        <button class="btn-control" data-filter="personagens">Personagens</button>
+        <button class="btn-control" data-filter="mundo">Vice City & Leonida</button>
+      </div>
+
+      <div class="view-group" role="group" aria-label="Modo de visualização">
+        <button class="btn-control active" id="btnGrid" onclick="setViewMode('grid')">Grelha</button>
+        <button class="btn-control" id="btnCarousel" onclick="setViewMode('carousel')">Carrossel</button>
+      </div>
+    </div>
+
+    <!-- GRELHA -->
+    <div class="gallery-grid" id="galleryGrid"></div>
+
+    <!-- CARROSSEL -->
+    <div class="carousel-container" id="carouselView">
+      <div class="carousel-stage">
+        <button class="carousel-arrow prev" onclick="changeSlide(-1)" aria-label="Imagem anterior">&#10094;</button>
+        <img id="carouselImg" src="" alt="" onclick="openLightbox(currentCarouselIndex)" />
+        <button class="carousel-arrow next" onclick="changeSlide(1)" aria-label="Próxima imagem">&#10095;</button>
+      </div>
+      <div class="carousel-caption">
+        <div>
+          <span class="card-category" id="carouselCat"></span>
+          <h3 class="card-title" id="carouselTitle"></h3>
+          <p class="card-desc" id="carouselDesc"></p>
+        </div>
+        <button class="btn-control active" onclick="openLightbox(currentCarouselIndex)">Ampliar em Ecrã Inteiro</button>
+      </div>
+      <div class="carousel-thumbs" id="carouselThumbs"></div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visualizador ampliado">
+    <div class="lb-top">
+      <span class="lb-counter" id="lbCounter">1 / 5</span>
+      <div class="lb-actions">
+        <button class="lb-btn" id="btnZoomToggle" onclick="toggleZoom()">Ampliar (Zoom +)</button>
+        <button class="lb-btn" onclick="closeLightbox()">Fechar ✕</button>
+      </div>
+    </div>
+
+    <div class="lb-viewport">
+      <button class="lb-nav prev" onclick="navigateLightbox(-1)" aria-label="Anterior">&#10094;</button>
+      <img id="lbImage" src="" alt="" onclick="toggleZoom()" />
+      <button class="lb-nav next" onclick="navigateLightbox(1)" aria-label="Próxima">&#10095;</button>
+    </div>
+
+    <div class="lb-bottom">
+      <h3 id="lbTitle"></h3>
+      <p id="lbDesc"></p>
+    </div>
+  </div>
+
+  <!-- RODAPÉ -->
+  <footer>
+    <p><strong>Game Web Challenge — Parte 03 (Mídia e Galeria)</strong> • Projeto promocional fictício inspirado em Grand Theft Auto VI.</p>
+  </footer>
+
+  <script>
+    const mediaItems = [
+      {
+        src: "capa.jpg.jpg",
+        category: "arte",
+        categoryLabel: "Arte Oficial Principal",
+        title: "Lucia Caminos & Jason Duval — Vice City",
+        desc: "Arte promocional oficial destacando a dupla protagonista nas docas ensolaradas de Vice City com helicóptero e lancha policial ao fundo.",
+        featured: true
+      },
+      {
+        src: "lucia.jpg.jpg",
+        category: "personagens",
+        categoryLabel: "Personagens",
+        title: "Lucia — Treinamento Intenso",
+        desc: "Lucia aprimora os seus golpes no saco de pancadas antes de encarar os desafios mais perigosos do submundo de Leonida.",
+        featured: false
+      },
+      {
+        src: "praia.jpg.jpg",
+        category: "mundo",
+        categoryLabel: "Vice City & Leonida",
+        title: "Vice Beach — O Coração de Vice City",
+        desc: "Areias movimentadas, motas de água, helicópteros a sobrevoar arranha-céus Art Déco e a energia vibrante da costa de Leonida.",
+        featured: false
+      },
+      {
+        src: "barco.webp.webp",
+        category: "mundo",
+        categoryLabel: "Vice City & Leonida",
+        title: "Arquipélago de Leonida Keys",
+        desc: "Navegação em águas cristalinas rumo às ilhas tropicais do sul do estado sob nuvens carregadas no horizonte.",
+        featured: false
+      },
+      {
+        src: "lama.webp.webp",
+        category: "mundo",
+        categoryLabel: "Cultura de Leonida",
+        title: "Thrillbilly Mud Club",
+        desc: "A lama voa alto nos eventos todo-o-terreno com camiões monstruosos e festas radicais no interior de Leonida.",
+        featured: false
+      }
+    ];
+
+    let activeFilter = "todos";
+    let filteredItems = [...mediaItems];
+    let currentLightboxIndex = 0;
+    let currentCarouselIndex = 0;
+    let isZoomed = false;
+
+    const galleryGrid = document.getElementById("galleryGrid");
+    const carouselView = document.getElementById("carouselView");
+
+    function renderGrid() {
+      galleryGrid.innerHTML = "";
+      filteredItems.forEach((item, index) => {
+        const card = document.createElement("article");
+        card.className = `media-card ${item.featured && activeFilter === "todos" ? "featured" : ""}`;
+        card.onclick = () => openLightbox(index);
+
+        card.innerHTML = `
+          <div class="media-thumb-box">
+            <img src="${item.src}" alt="${item.title}" loading="lazy" />
+            <span class="zoom-badge">🔍 Ampliar Imagem</span>
+          </div>
+          <div class="card-body">
+            <span class="card-category">${item.categoryLabel}</span>
+            <h3 class="card-title">${item.title}</h3>
+            <p class="card-desc">${item.desc}</p>
+          </div>
+        `;
+        galleryGrid.appendChild(card);
+      });
+    }
+
+    function renderCarousel() {
+      if (currentCarouselIndex >= filteredItems.length) currentCarouselIndex = 0;
+      const item = filteredItems[currentCarouselIndex];
+
+      document.getElementById("carouselImg").src = item.src;
+      document.getElementById("carouselImg").alt = item.title;
+      document.getElementById("carouselCat").textContent = item.categoryLabel;
+      document.getElementById("carouselTitle").textContent = item.title;
+      document.getElementById("carouselDesc").textContent = item.desc;
+
+      const thumbsContainer = document.getElementById("carouselThumbs");
+      thumbsContainer.innerHTML = "";
+      filteredItems.forEach((thumbItem, idx) => {
+        const thumb = document.createElement("div");
+        thumb.className = `c-thumb ${idx === currentCarouselIndex ? "active" : ""}`;
+        thumb.onclick = () => {
+          currentCarouselIndex = idx;
+          renderCarousel();
+        };
+        thumb.innerHTML = `<img src="${thumbItem.src}" alt="${thumbItem.title}" />`;
+        thumbsContainer.appendChild(thumb);
+      });
+    }
+
+    function changeSlide(step) {
+      currentCarouselIndex = (currentCarouselIndex + step + filteredItems.length) % filteredItems.length;
+      renderCarousel();
+    }
+
+    function setViewMode(mode) {
+      const btnGrid = document.getElementById("btnGrid");
+      const btnCarousel = document.getElementById("btnCarousel");
+
+      if (mode === "grid") {
+        galleryGrid.style.display = "grid";
+        carouselView.classList.remove("active");
+        btnGrid.classList.add("active");
+        btnCarousel.classList.remove("active");
+      } else {
+        galleryGrid.style.display = "none";
+        carouselView.classList.add("active");
+        btnCarousel.classList.add("active");
+        btnGrid.classList.remove("active");
+        renderCarousel();
+      }
+    }
+
+    document.querySelectorAll("[data-filter]").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll("[data-filter]").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        activeFilter = btn.dataset.filter;
+        filteredItems = activeFilter === "todos"
+          ? [...mediaItems]
+          : mediaItems.filter(item => item.category === activeFilter);
+
+        currentCarouselIndex = 0;
+        renderGrid();
+        renderCarousel();
+      });
+    });
+
+    function openLightbox(index) {
+      currentLightboxIndex = index;
+      isZoomed = false;
+      updateLightbox();
+      document.getElementById("lightbox").classList.add("open");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeLightbox() {
+      document.getElementById("lightbox").classList.remove("open");
+      document.body.style.overflow = "";
+    }
+
+    function navigateLightbox(step) {
+      currentLightboxIndex = (currentLightboxIndex + step + filteredItems.length) % filteredItems.length;
+      isZoomed = false;
+      updateLightbox();
+    }
+
+    function toggleZoom() {
+      isZoomed = !isZoomed;
+      const img = document.getElementById("lbImage");
+      const btn = document.getElementById("btnZoomToggle");
+      img.classList.toggle("zoomed", isZoomed);
+      btn.textContent = isZoomed ? "Reduzir (Zoom -)" : "Ampliar (Zoom +)";
+    }
+
+    function updateLightbox() {
+      const item = filteredItems[currentLightboxIndex];
+      const img = document.getElementById("lbImage");
+      img.classList.remove("zoomed");
+      img.src = item.src;
+      img.alt = item.title;
+
+      document.getElementById("btnZoomToggle").textContent = "Ampliar (Zoom +)";
+      document.getElementById("lbCounter").textContent = `${currentLightboxIndex + 1} / ${filteredItems.length}`;
+      document.getElementById("lbTitle").textContent = item.title;
+      document.getElementById("lbDesc").textContent = item.desc;
+    }
+
+    document.addEventListener("keydown", (e) => {
+      const lb = document.getElementById("lightbox");
+      if (!lb.classList.contains("open")) return;
+
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowRight") navigateLightbox(1);
+      if (e.key === "ArrowLeft") navigateLightbox(-1);
+    });
+
+    renderGrid();
+  </script>
+</body>
+</html>

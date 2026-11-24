@@ -1,0 +1,1900 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grand Theft Auto VI — Portal Oficial | Leonida & Vice City</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Montserrat, Oswald, Bebas Neue & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=Montserrat:ital,wght@0,700;0,800;0,900;1,900&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Montserrat', 'sans-serif'],
+            condensed: ['Oswald', 'sans-serif'],
+            bebas: ['Bebas Neue', 'sans-serif'],
+          },
+          colors: {
+            vice: {
+              bg: '#0d0618',
+              card: '#160b28',
+              pink: '#ff2a85',
+              orange: '#ff6b35',
+              purple: '#3b0d54',
+              cyan: '#00e5ff',
+              gold: '#ffd166'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* =====================================================================
+       ESTILOS GLOBAIS & IDENTIDADE VISUAL VICE CITY / LEONIDA
+       ===================================================================== */
+    :root {
+      --bg-dark: #0d0618;
+      --bg-card: #160922;
+      --neon-pink: #ff2a85;
+      --sunset-coral: #ff6b9d;
+      --sunset-orange: #ff9e00;
+      --vice-purple: #5a189a;
+      --electric-cyan: #00e5ff;
+      --vice-gold: #ffd166;
+      --gradient-vice: linear-gradient(135deg, #ff2a85 0%, #ff9e00 50%, #5a189a 100%);
+      --gradient-title: linear-gradient(90deg, #ff6b9d, #ffd166, #00e5ff);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: #0d0618;
+      color: #ffffff;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Controle de exibição das 4 páginas conectadas */
+    .spa-page {
+      display: none;
+      animation: pageFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .spa-page.active-page {
+      display: block;
+    }
+
+    @keyframes pageFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Glassmorphism & Efeitos Néon */
+    .glass-panel {
+      background: rgba(22, 9, 38, 0.78);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .neon-pink-glow {
+      box-shadow: 0 0 22px rgba(255, 42, 133, 0.42), inset 0 0 12px rgba(255, 42, 133, 0.18);
+    }
+
+    .neon-cyan-glow {
+      box-shadow: 0 0 20px rgba(0, 229, 255, 0.4), inset 0 0 10px rgba(0, 229, 255, 0.2);
+    }
+
+    .neon-gold-glow {
+      box-shadow: 0 0 24px rgba(255, 209, 102, 0.35), inset 0 0 10px rgba(255, 209, 102, 0.15);
+    }
+
+    .text-gradient-vice {
+      background: linear-gradient(90deg, #ff6b35 0%, #ff2a85 50%, #00e5ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .text-gradient-gold {
+      background: linear-gradient(135deg, #fff3b0 0%, #ffd166 55%, #ff2a85 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .btn-vice-primary {
+      background: linear-gradient(90deg, #ff2a85 0%, #ff6b35 100%);
+      color: #ffffff;
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    .btn-vice-primary:hover {
+      transform: translateY(-2px) scale(1.015);
+      box-shadow: 0 10px 30px rgba(255, 42, 133, 0.6);
+    }
+
+    .btn-vice-gold {
+      background: linear-gradient(90deg, #ff2a85 0%, #ffd166 100%);
+      color: #0d0618;
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    .btn-vice-gold:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 10px 30px rgba(255, 209, 102, 0.45);
+    }
+
+    /* =====================================================================
+       ESTILOS ESPECÍFICOS — PÁGINA 01: INÍCIO
+       ===================================================================== */
+    .home-hero-bg {
+      background:
+        radial-gradient(circle at 85% 20%, rgba(255, 208, 0, 0.32), transparent 42%),
+        radial-gradient(circle at 15% 80%, rgba(0, 229, 255, 0.22), transparent 45%),
+        linear-gradient(135deg, #24073e 0%, #6d105e 48%, #c92a58 82%, #ff6b35 100%);
+    }
+
+    /* =====================================================================
+       ESTILOS ESPECÍFICOS — PÁGINA 02: LOJA
+       ===================================================================== */
+    .vice-hero-bg {
+      background:
+        radial-gradient(circle at 75% 25%, rgba(255, 107, 53, 0.45) 0%, rgba(255, 42, 133, 0.35) 35%, rgba(59, 13, 84, 0.7) 70%, #0d0618 100%),
+        linear-gradient(180deg, #240738 0%, #3b0d54 45%, #0d0618 100%);
+    }
+
+    .retro-grid {
+      background-size: 40px 40px;
+      background-image:
+        linear-gradient(to right, rgba(255, 42, 133, 0.08) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 229, 255, 0.08) 1px, transparent 1px);
+    }
+
+    @keyframes modalPop {
+      0% { opacity: 0; transform: scale(0.92) translateY(15px); }
+      100% { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    .animate-modal {
+      animation: modalPop 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    /* =====================================================================
+       ESTILOS ESPECÍFICOS — PÁGINA 03: MÍDIA & GALERIA
+       ===================================================================== */
+    .gallery-ambient {
+      background-image:
+        radial-gradient(circle at 15% 15%, rgba(255, 42, 133, 0.16), transparent 40%),
+        radial-gradient(circle at 85% 30%, rgba(0, 229, 255, 0.14), transparent 40%),
+        radial-gradient(circle at 50% 85%, rgba(90, 24, 154, 0.25), transparent 50%);
+    }
+
+    .btn-control {
+      background: rgba(255, 255, 255, 0.06);
+      color: #c7b8d6;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      padding: 0.55rem 1.05rem;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .btn-control:hover {
+      border-color: #ff6b9d;
+      color: #ffffff;
+    }
+
+    .btn-control.active {
+      background: var(--gradient-vice);
+      color: #ffffff;
+      border-color: transparent;
+      box-shadow: 0 4px 16px rgba(255, 42, 133, 0.4);
+    }
+
+    .media-card {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #160922;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      cursor: pointer;
+      transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+    }
+
+    .media-card:hover {
+      transform: translateY(-6px);
+      border-color: #ff2a85;
+      box-shadow: 0 15px 35px rgba(255, 42, 133, 0.3);
+    }
+
+    .media-card.featured {
+      grid-column: 1 / -1;
+    }
+
+    .media-thumb-box {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      background: #12061c;
+    }
+
+    .media-card.featured .media-thumb-box {
+      aspect-ratio: 21 / 9;
+    }
+
+    .media-thumb-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+      display: block;
+    }
+
+    .media-card:hover .media-thumb-box img {
+      transform: scale(1.06);
+    }
+
+    .zoom-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(9, 4, 14, 0.85);
+      color: #00e5ff;
+      border: 1px solid rgba(0, 229, 255, 0.5);
+      padding: 0.38rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      opacity: 0;
+      transform: translateY(-5px);
+      transition: all 0.25s ease;
+    }
+
+    .media-card:hover .zoom-badge {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .c-thumb {
+      width: 115px;
+      height: 66px;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 2px solid transparent;
+      opacity: 0.55;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: all 0.2s ease;
+    }
+
+    .c-thumb.active, .c-thumb:hover {
+      opacity: 1;
+      border-color: #00e5ff;
+      transform: scale(1.04);
+    }
+
+    /* Lightbox */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(5, 2, 10, 0.96);
+      backdrop-filter: blur(12px);
+      z-index: 999;
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 1.25rem 1.5rem;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lb-viewport img {
+      max-width: 90%;
+      max-height: 70vh;
+      border-radius: 12px;
+      box-shadow: 0 0 50px rgba(255, 42, 133, 0.35);
+      transition: transform 0.3s ease;
+      cursor: zoom-in;
+    }
+
+    .lb-viewport img.zoomed {
+      transform: scale(1.55);
+      cursor: zoom-out;
+    }
+
+    @media (max-width: 768px) {
+      .media-card.featured .media-thumb-box {
+        aspect-ratio: 16 / 9;
+      }
+      .lb-viewport img.zoomed {
+        transform: scale(1.3);
+      }
+    }
+
+    /* =====================================================================
+       ESTILOS ESPECÍFICOS — PÁGINA 04: SOBRE O JOGO
+       ===================================================================== */
+    .leonida-banner-bg {
+      background-image:
+        linear-gradient(180deg, rgba(13, 6, 24, 0.65) 0%, rgba(59, 13, 84, 0.55) 45%, #0d0618 100%),
+        radial-gradient(circle at 50% 35%, rgba(255, 209, 102, 0.35) 0%, rgba(255, 42, 133, 0.45) 45%, rgba(59, 13, 84, 0.85) 100%),
+        url('https://images.unsplash.com/photo-1514214246283-d427a95c5d2f?auto=format&fit=crop&w=1920&q=80');
+      background-size: cover;
+      background-position: center 40%;
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-vice-pink selection:text-white">
+
+  <!-- =====================================================================
+       BARRA DE NAVEGAÇÃO UNIFICADA (CONECTA AS 4 PÁGINAS SEM RECARREGAR)
+       ===================================================================== -->
+  <header class="sticky top-0 z-50 glass-panel border-b border-vice-pink/35">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-wrap items-center justify-between gap-3">
+      
+      <!-- Logo Principal Clicável -> Página 01 (Início) -->
+      <button type="button" onclick="navigateTo('inicio')" class="flex items-center gap-3 text-left cursor-pointer group focus:outline-none">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-vice-gold via-vice-pink to-vice-purple flex items-center justify-center font-display font-black text-lg text-white shadow-lg group-hover:scale-105 transition">
+          R★
+        </div>
+        <div class="flex items-baseline gap-1.5">
+          <span class="font-display font-black text-xl sm:text-2xl tracking-tight text-white">GTA</span>
+          <span class="font-bebas text-3xl sm:text-4xl text-gradient-vice leading-none drop-shadow">VI</span>
+          <span class="hidden sm:inline-block ml-2 text-[11px] font-condensed uppercase tracking-[0.2em] text-vice-cyan">
+            Leonida
+          </span>
+        </div>
+      </button>
+
+      <!-- Menu das 4 Páginas -->
+      <nav aria-label="Navegação entre as 4 páginas do site" class="flex items-center gap-1.5 sm:gap-2 order-3 lg:order-2 w-full lg:w-auto justify-center overflow-x-auto py-1">
+        <button type="button" data-nav="inicio" onclick="navigateTo('inicio')"
+          class="nav-link px-3.5 py-2 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer whitespace-nowrap bg-vice-pink/25 text-white border border-vice-pink shadow-[0_0_15px_rgba(255,42,133,0.4)]">
+          01. Início
+        </button>
+        <button type="button" data-nav="loja" onclick="navigateTo('loja')"
+          class="nav-link px-3.5 py-2 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer whitespace-nowrap text-gray-300 hover:text-white border border-transparent hover:border-white/20">
+          02. Loja
+        </button>
+        <button type="button" data-nav="galeria" onclick="navigateTo('galeria')"
+          class="nav-link px-3.5 py-2 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer whitespace-nowrap text-gray-300 hover:text-white border border-transparent hover:border-white/20">
+          03. Mídia & Galeria
+        </button>
+        <button type="button" data-nav="sobre" onclick="navigateTo('sobre')"
+          class="nav-link px-3.5 py-2 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer whitespace-nowrap text-gray-300 hover:text-white border border-transparent hover:border-white/20">
+          04. Sobre o Jogo
+        </button>
+      </nav>
+
+      <!-- Botão Rápido CTA para Loja -->
+      <div class="order-2 lg:order-3 flex items-center gap-2">
+        <button type="button" onclick="navigateTo('loja')"
+          class="btn-vice-gold px-4 py-2 rounded-xl font-display font-black uppercase tracking-wider text-xs sm:text-sm shadow-lg cursor-pointer">
+          Comprar Agora
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- CONTEÚDO PRINCIPAL (CONTAINER DAS 4 PÁGINAS) -->
+  <div class="flex-1">
+
+    <!-- ===================================================================
+         PÁGINA 01: INÍCIO
+         =================================================================== -->
+    <section id="page-inicio" class="spa-page active-page">
+      <!-- Hero Principal -->
+      <div class="home-hero-bg py-14 sm:py-20 px-4 sm:px-8 lg:px-16 border-b border-vice-pink/30">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          
+          <!-- Texto da Campanha -->
+          <div class="lg:col-span-7">
+            <span class="inline-block bg-[#120424]/85 border border-vice-cyan text-vice-cyan px-4 py-1.5 rounded-full text-xs sm:text-sm font-extrabold tracking-wider mb-5 shadow-[0_0_15px_rgba(0,229,255,0.4)]">
+              LANÇAMENTO MUNDIAL • 19 DE NOVEMBRO DE 2026
+            </span>
+
+            <h1 class="font-display font-black text-4xl sm:text-6xl leading-[1.05] text-white mb-4">
+              GRAND THEFT AUTO <span class="text-gradient-vice">VI</span>
+            </h1>
+
+            <p class="text-lg sm:text-xl text-vice-gold font-bold mb-4">
+              Bem-vindo a Leonida. Onde o sol nunca se põe no crime e cada escolha define o seu império.
+            </p>
+
+            <p class="text-purple-100 text-base sm:text-lg leading-relaxed mb-7">
+              Explore as ruas iluminadas por neon de Vice City e os pântanos selvagens de Leonida no maior mundo aberto já criado. Viva a história intensa de Lucia e Jason com gráficos de nova geração e liberdade total.
+            </p>
+
+            <!-- Destaque da Campanha: Compre Agora, Pague Depois -->
+            <div class="bg-gradient-to-br from-[#180630]/95 to-[#440c4a]/90 border-2 border-vice-pink border-l-[6px] border-l-vice-cyan p-5 sm:p-6 rounded-2xl mb-8 shadow-[0_0_25px_rgba(255,42,133,0.45)]">
+              <h2 class="text-vice-cyan font-display font-black text-lg sm:text-xl mb-1.5">
+                🔥 COMPRE AGORA, PAGUE DEPOIS
+              </h2>
+              <p class="text-sm sm:text-base text-gray-100">
+                Jogue no primeiro dia com <strong class="text-vice-gold">R$ 0,00 de entrada</strong>. Primeira parcela só daqui a <strong class="text-vice-gold">60 dias</strong> ou em até 12x sem juros no boleto digital.
+              </p>
+            </div>
+
+            <!-- Chamadas para Ação (CTA) conectadas às outras páginas -->
+            <div class="flex flex-wrap gap-4">
+              <button type="button" onclick="navigateTo('loja')"
+                class="btn-vice-gold px-7 py-4 rounded-xl font-display font-black tracking-wide text-sm sm:text-base shadow-xl cursor-pointer">
+                GARANTIR MINHA CÓPIA AGORA
+              </button>
+              <button type="button" onclick="goToTrailer()"
+                class="bg-[#120424]/75 border-2 border-vice-cyan text-vice-cyan hover:bg-vice-cyan hover:text-[#120424] px-6 py-3.5 rounded-xl font-display font-extrabold text-sm sm:text-base transition cursor-pointer">
+                ASSISTIR AO TRAILER
+              </button>
+              <button type="button" onclick="navigateTo('sobre')"
+                class="bg-white/10 hover:bg-white/20 border border-white/25 text-white px-5 py-3.5 rounded-xl font-bold text-sm transition cursor-pointer">
+                Conhecer História & Personagens →
+              </button>
+            </div>
+          </div>
+
+          <!-- Imagem de Destaque -->
+          <div class="lg:col-span-5">
+            <div class="relative rounded-2xl overflow-hidden border-[3px] border-vice-gold shadow-[0_0_32px_rgba(255,42,133,0.7)]">
+              <img
+                src="https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=900&q=80"
+                onerror="this.src='https://placehold.co/900x650/2b094e/ffd166?text=Vice+City+%E2%80%A2+Leonida'"
+                alt="Paisagem neon inspirada em Vice City ao pôr do sol"
+                class="w-full h-[360px] sm:h-[430px] object-cover block"
+              />
+              <span class="absolute bottom-4 right-4 bg-gradient-to-r from-vice-pink to-purple-700 px-4 py-1.5 rounded-full text-xs font-extrabold text-white shadow-lg">
+                Vice City • Estado de Leonida
+              </span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Faixa de Vantagens e Diferenciais do Jogo -->
+      <div class="max-w-7xl mx-auto px-4 sm:px-8 py-14">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div onclick="navigateTo('loja')" class="cursor-pointer bg-gradient-to-br from-[#270b47] to-[#190630] p-6 rounded-2xl border-t-[3px] border-t-vice-cyan border-b-[3px] border-b-vice-pink hover:-translate-y-1 transition">
+            <h3 class="text-vice-gold font-display font-bold text-lg mb-2.5">💳 Zero Entrada Hoje</h3>
+            <p class="text-sm text-gray-200 leading-relaxed">
+              Ative o Passe Leonida Pay na loja e comece a jogar no lançamento pagando a primeira parcela só em 2027.
+            </p>
+          </div>
+
+          <div onclick="navigateTo('sobre')" class="cursor-pointer bg-gradient-to-br from-[#270b47] to-[#190630] p-6 rounded-2xl border-t-[3px] border-t-vice-cyan border-b-[3px] border-b-vice-pink hover:-translate-y-1 transition">
+            <h3 class="text-vice-gold font-display font-bold text-lg mb-2.5">🌴 Mundo Vivo e Gigante</h3>
+            <p class="text-sm text-gray-200 leading-relaxed">
+              De praias paradisíacas a pântanos perigosos, cada bairro de Leonida reage às suas ações em tempo real.
+            </p>
+          </div>
+
+          <div onclick="navigateTo('sobre')" class="cursor-pointer bg-gradient-to-br from-[#270b47] to-[#190630] p-6 rounded-2xl border-t-[3px] border-t-vice-cyan border-b-[3px] border-b-vice-pink hover:-translate-y-1 transition">
+            <h3 class="text-vice-gold font-display font-bold text-lg mb-2.5">🔥 Dupla Protagonista</h3>
+            <p class="text-sm text-gray-200 leading-relaxed">
+              Alterne entre Lucia e Jason em assaltos planejados, perseguições em alta velocidade e decisões arriscadas.
+            </p>
+          </div>
+
+          <div onclick="navigateTo('loja')" class="cursor-pointer bg-gradient-to-br from-[#270b47] to-[#190630] p-6 rounded-2xl border-t-[3px] border-t-vice-cyan border-b-[3px] border-b-vice-pink hover:-translate-y-1 transition">
+            <h3 class="text-vice-gold font-display font-bold text-lg mb-2.5">🎁 Bônus Exclusivo</h3>
+            <p class="text-sm text-gray-200 leading-relaxed">
+              Garanta hoje e receba o pacote <em class="text-vice-cyan font-semibold">Vintage Vice City</em> com trajes neon, arsenal dourado e veículo esportivo exclusivo no lançamento.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         PÁGINA 02: LOJA & PRÉ-VENDA
+         =================================================================== -->
+    <section id="page-loja" class="spa-page">
+      <div class="relative vice-hero-bg pt-10 pb-16 sm:pt-14 sm:pb-20 overflow-hidden border-b border-vice-pink/20">
+        <div class="absolute right-[-10%] sm:right-[8%] top-8 w-72 h-72 sm:w-[420px] sm:h-[420px] rounded-full bg-gradient-to-b from-vice-gold via-vice-orange to-vice-pink opacity-35 blur-2xl pointer-events-none"></div>
+        
+        <svg class="absolute bottom-0 left-0 w-full h-40 sm:h-56 pointer-events-none opacity-35" viewBox="0 0 1440 320" preserveAspectRatio="none">
+          <path fill="#0d0618" d="M0,320 L0,230 L60,230 L60,190 L110,190 L110,250 L180,250 L180,160 L240,160 L240,220 L310,220 L310,270 L1120,270 L1120,180 L1180,180 L1180,140 L1240,140 L1240,210 L1320,210 L1320,170 L1390,170 L1390,240 L1440,240 L1440,320 Z"></path>
+          <path fill="#0d0618" d="M140,320 Q155,210 130,120 Q100,130 75,155 Q105,115 130,110 Q95,95 65,105 Q100,85 135,102 Q130,65 115,45 Q140,68 145,100 Q175,70 210,75 Q175,85 150,108 Q190,110 215,135 Q180,122 148,118 Q170,210 155,320 Z"></path>
+          <path fill="#0d0618" d="M1280,320 Q1265,200 1295,100 Q1260,110 1230,135 Q1265,95 1292,90 Q1255,75 1220,85 Q1260,65 1298,82 Q1295,45 1280,25 Q1305,48 1310,80 Q1345,50 1380,55 Q1340,65 1315,88 Q1355,90 1385,115 Q1345,102 1312,98 Q1285,200 1300,320 Z"></path>
+        </svg>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            
+            <div class="lg:col-span-7 text-center lg:text-left">
+              <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-vice-pink/30 to-vice-orange/30 border border-vice-pink/50 text-xs font-bold uppercase tracking-widest text-vice-gold mb-5 shadow-lg">
+                <span>🌴</span> Pré-Venda Oficial • Edição Digital & Colecionador
+              </div>
+
+              <div class="mb-5 select-none">
+                <span class="block font-condensed font-bold tracking-[0.25em] text-sm sm:text-lg text-vice-cyan uppercase mb-1">
+                  Loja Oficial Leonida
+                </span>
+                <h1 class="font-display font-black italic text-4xl sm:text-6xl tracking-tight leading-none text-white drop-shadow-[0_6px_24px_rgba(255,42,133,0.65)]">
+                  GRAND THEFT AUTO
+                  <span class="block sm:inline-block mt-1 sm:mt-0 sm:ml-3 text-5xl sm:text-7xl text-gradient-vice">
+                    VI
+                  </span>
+                </h1>
+              </div>
+
+              <p class="text-gray-200 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0 mb-7">
+                Explore as ruas banhadas pelo néon de <strong class="text-white">Vice City</strong> e muito além, no estado ensolarado e implacável de <strong class="text-vice-cyan">Leonida</strong>. Garanta sua cópia antecipada e receba bônus exclusivos de lançamento.
+              </p>
+
+              <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4">
+                <a href="#selecao-edicao" class="btn-vice-primary px-7 py-4 rounded-2xl font-display font-bold uppercase tracking-wider text-sm sm:text-base shadow-xl">
+                  Escolher Minha Edição
+                </a>
+                <div class="flex items-center gap-3 px-4 py-3 rounded-2xl glass-panel text-left">
+                  <div class="w-10 h-10 rounded-xl bg-vice-cyan/15 border border-vice-cyan/40 flex items-center justify-center text-vice-cyan font-bold text-xs">
+                    18+
+                  </div>
+                  <div>
+                    <p class="text-xs font-bold text-white uppercase">Classificação Indicativa</p>
+                    <p class="text-[11px] text-gray-400">Violência Extrema • Linguagem Imprópria</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="lg:col-span-5">
+              <div class="relative rounded-3xl p-1 bg-gradient-to-br from-vice-cyan via-vice-pink to-vice-orange shadow-2xl neon-pink-glow">
+                <div class="rounded-[22px] bg-[#130724] p-6 sm:p-7 relative overflow-hidden retro-grid">
+                  <div class="flex justify-between items-center mb-5">
+                    <span class="px-3 py-1 rounded-lg bg-vice-cyan/20 text-vice-cyan text-xs font-bold uppercase tracking-wider border border-vice-cyan/30">
+                      Bônus de Pré-Venda
+                    </span>
+                    <span class="text-xs font-semibold text-gray-400">Lançamento Global</span>
+                  </div>
+
+                  <div class="relative h-44 sm:h-52 rounded-2xl overflow-hidden mb-5 bg-gradient-to-b from-[#ff6b35] via-[#ff2a85] to-[#2b0944] flex flex-col items-center justify-center p-4 text-center border border-white/15">
+                    <div class="w-24 h-24 rounded-full bg-vice-gold/90 blur-[1px] absolute top-5 shadow-[0_0_40px_#ffd166]"></div>
+                    <div class="relative z-10 mt-8">
+                      <p class="font-condensed font-bold tracking-[0.3em] text-xs uppercase text-white/90">ESTADO DE LEONIDA</p>
+                      <p class="font-display font-black italic text-3xl sm:text-4xl text-white tracking-tight">VICE CITY</p>
+                      <span class="inline-block mt-2 px-3 py-0.5 rounded-full bg-black/50 backdrop-blur-sm text-[11px] font-semibold text-vice-cyan border border-vice-cyan/40">
+                        Inclui Acesso ao GTA Online
+                      </span>
+                    </div>
+                  </div>
+
+                  <ul class="space-y-2 text-sm text-gray-200">
+                    <li class="flex items-center gap-2.5">
+                      <span class="text-vice-cyan font-bold">✓</span>
+                      <span>Download antecipado (Pré-load) liberado 48h antes</span>
+                    </li>
+                    <li class="flex items-center gap-2.5">
+                      <span class="text-vice-pink font-bold">✓</span>
+                      <span>Supercarro exclusivo <strong>Pegassi Leonida GT</strong></span>
+                    </li>
+                    <li class="flex items-center gap-2.5">
+                      <span class="text-vice-gold font-bold">✓</span>
+                      <span>Bônus imediato em dinheiro para o modo Online</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Área Principal de Configuração da Compra -->
+      <div id="selecao-edicao" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+          
+          <div class="lg:col-span-8 space-y-10">
+            
+            <!-- Passo 1: Plataforma -->
+            <div>
+              <div class="flex items-center gap-3 mb-5">
+                <span class="w-8 h-8 rounded-xl bg-vice-pink text-white font-display font-black text-sm flex items-center justify-center shadow-lg">1</span>
+                <h2 class="font-display font-bold text-xl sm:text-2xl uppercase tracking-wide text-white">
+                  Escolha sua Plataforma
+                </h2>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-4" id="platform-selector">
+                <button type="button" data-platform="PlayStation 5"
+                  class="platform-btn group relative p-5 rounded-2xl glass-panel border-2 border-vice-cyan neon-cyan-glow text-left transition-all cursor-pointer flex items-center sm:flex-col sm:items-start gap-4">
+                  <div class="w-12 h-12 rounded-xl bg-vice-cyan/20 text-vice-cyan flex items-center justify-center shrink-0">
+                    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M9.5 4.25v15.5l3.25 1.05V7.15c0-.65.28-1.08.85-.88.62.22.75.82.75 1.47v5.48c2.25 1.1 4.02.02 4.02-2.92 0-2.98-1.05-4.32-4.12-5.38-1.22-.42-3.35-1.12-4.75-1.67zM8.35 16.3L3.1 18.18c-1.35.48-1.58 1.25-.42 1.65 1.15.4 3.12.45 4.48-.03l1.19-.42v-3.08zm11.95-.52c-1.25-.42-3.22-.52-4.7-.12l-1.6.55v2.82l3.82-1.36c1.32-.47 1.55-1.22.42-1.62-.42-.15-1.15-.22-1.94-.27z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <span class="block font-display font-bold text-base sm:text-lg text-white">PlayStation 5</span>
+                    <span class="text-xs text-vice-cyan font-medium">Mídia Digital PSN</span>
+                  </div>
+                  <span class="active-badge absolute top-3 right-3 w-3 h-3 rounded-full bg-vice-cyan shadow-[0_0_10px_#00e5ff]"></span>
+                </button>
+
+                <button type="button" data-platform="Xbox Series X|S"
+                  class="platform-btn group relative p-5 rounded-2xl glass-panel border-2 border-white/10 hover:border-white/30 text-left transition-all cursor-pointer flex items-center sm:flex-col sm:items-start gap-4">
+                  <div class="w-12 h-12 rounded-xl bg-white/10 text-gray-300 group-hover:text-white flex items-center justify-center shrink-0 transition">
+                    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.85 3.65c.95.88 1.72 1.96 2.24 3.18-1.35-1.42-3.42-2.62-5.45-3.25 1.08-.42 2.22-.4 3.21.07zM12 4.1c1.12 0 2.18.23 3.15.63-1.08.38-2.18.95-3.15 1.65-.97-.7-2.07-1.27-3.15-1.65.97-.4 2.03-.63 3.15-.63zM7.15 5.65c.99-.47 2.13-.49 3.21-.07-2.03.63-4.1 1.83-5.45 3.25.52-1.22 1.29-2.3 2.24-3.18zM4.2 13.4c-.13-.45-.2-.92-.2-1.4 0-1.15.25-2.24.69-3.23 1.45 1.68 3.68 4.25 4.88 6.48-1.85 2.02-3.55 3.45-4.38 4.02-.52-.85-.86-1.82-.99-2.87zm7.8 6.5c-1.82 0-3.5-.62-4.84-1.65 1.38-1.12 3.12-2.82 4.84-4.95 1.72 2.13 3.46 3.83 4.84 4.95-1.34 1.03-3.02 1.65-4.84 1.65zm7.8-6.5c-.13 1.05-.47 2.02-.99 2.87-.83-.57-2.53-2-4.38-4.02 1.2-2.23 3.43-4.8 4.88-6.48.44.99.69 2.08.69 3.23 0 .48-.07.95-.2 1.4z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <span class="block font-display font-bold text-base sm:text-lg text-white">Xbox Series X|S</span>
+                    <span class="text-xs text-gray-400 font-medium">Entrega Inteligente</span>
+                  </div>
+                  <span class="active-badge hidden absolute top-3 right-3 w-3 h-3 rounded-full bg-vice-cyan shadow-[0_0_10px_#00e5ff]"></span>
+                </button>
+
+                <button type="button" data-platform="PC (Launcher / Steam)"
+                  class="platform-btn group relative p-5 rounded-2xl glass-panel border-2 border-white/10 hover:border-white/30 text-left transition-all cursor-pointer flex items-center sm:flex-col sm:items-start gap-4">
+                  <div class="w-12 h-12 rounded-xl bg-white/10 text-gray-300 group-hover:text-white flex items-center justify-center shrink-0 transition">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                      <line x1="8" y1="21" x2="16" y2="21"></line>
+                      <line x1="12" y1="17" x2="12" y2="21"></line>
+                    </svg>
+                  </div>
+                  <div>
+                    <span class="block font-display font-bold text-base sm:text-lg text-white">PC</span>
+                    <span class="text-xs text-gray-400 font-medium">Launcher Oficial / Steam</span>
+                  </div>
+                  <span class="active-badge hidden absolute top-3 right-3 w-3 h-3 rounded-full bg-vice-cyan shadow-[0_0_10px_#00e5ff]"></span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Passo 2: Edições -->
+            <div>
+              <div class="flex items-center justify-between mb-5">
+                <div class="flex items-center gap-3">
+                  <span class="w-8 h-8 rounded-xl bg-vice-orange text-white font-display font-black text-sm flex items-center justify-center shadow-lg">2</span>
+                  <h2 class="font-display font-bold text-xl sm:text-2xl uppercase tracking-wide text-white">
+                    Selecione a Edição
+                  </h2>
+                </div>
+                <span class="text-xs text-gray-400 hidden sm:inline">Preços em Reais (BRL)</span>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-5" id="edition-selector">
+                
+                <!-- Standard -->
+                <div data-edition-id="standard"
+                  class="edition-card relative rounded-3xl glass-panel border-2 border-white/10 hover:border-vice-pink/50 p-6 flex flex-col justify-between transition-all cursor-pointer">
+                  <div>
+                    <div class="flex justify-between items-start mb-3">
+                      <span class="px-2.5 py-1 rounded-lg bg-white/10 text-gray-300 text-[11px] font-bold uppercase tracking-wider">Base</span>
+                      <div class="edition-radio w-5 h-5 rounded-full border-2 border-gray-500 flex items-center justify-center">
+                        <div class="w-2.5 h-2.5 rounded-full bg-vice-pink hidden"></div>
+                      </div>
+                    </div>
+                    <h3 class="font-display font-black text-xl text-white mb-1">Edição Standard</h3>
+                    <p class="text-xs text-gray-400 mb-4">A experiência completa em Leonida.</p>
+                    <div class="mb-5 pb-4 border-b border-white/10">
+                      <span class="text-xs text-gray-400 block">Valor da Pré-Venda</span>
+                      <span class="font-display font-black text-2xl sm:text-3xl text-white">R$ 349,90</span>
+                    </div>
+                    <ul class="space-y-3 text-xs sm:text-sm text-gray-300 mb-6">
+                      <li class="flex items-start gap-2"><span class="text-vice-cyan font-bold mt-0.5">✓</span><span>Jogo base <strong>Grand Theft Auto VI</strong></span></li>
+                      <li class="flex items-start gap-2"><span class="text-vice-cyan font-bold mt-0.5">✓</span><span><strong>Bônus Pré-Venda:</strong> Veículo Pegassi Leonida</span></li>
+                      <li class="flex items-start gap-2"><span class="text-vice-cyan font-bold mt-0.5">✓</span><span><strong>GTA$ 500.000</strong> no modo Online</span></li>
+                    </ul>
+                  </div>
+                  <button type="button" class="select-edition-btn w-full py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs uppercase tracking-wider transition">
+                    Selecionar Standard
+                  </button>
+                </div>
+
+                <!-- Deluxe -->
+                <div data-edition-id="deluxe"
+                  class="edition-card relative rounded-3xl glass-panel border-2 border-vice-pink neon-pink-glow p-6 flex flex-col justify-between transition-all cursor-pointer transform md:-translate-y-1">
+                  <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-3.5 py-1 rounded-full bg-gradient-to-r from-vice-pink to-vice-orange text-white text-[10px] font-display font-black uppercase tracking-widest shadow-lg whitespace-nowrap">
+                    ★ Mais Escolhida
+                  </div>
+                  <div>
+                    <div class="flex justify-between items-start mb-3 mt-1">
+                      <span class="px-2.5 py-1 rounded-lg bg-vice-pink/20 text-vice-pink text-[11px] font-bold uppercase tracking-wider border border-vice-pink/30">Vice City</span>
+                      <div class="edition-radio w-5 h-5 rounded-full border-2 border-vice-pink flex items-center justify-center">
+                        <div class="w-2.5 h-2.5 rounded-full bg-vice-pink"></div>
+                      </div>
+                    </div>
+                    <h3 class="font-display font-black text-xl text-white mb-1">Edição Deluxe</h3>
+                    <p class="text-xs text-vice-pink/90 font-medium mb-4">Pacote Vice City + Acesso Antecipado.</p>
+                    <div class="mb-5 pb-4 border-b border-white/10">
+                      <span class="text-xs text-gray-400 block">Valor da Pré-Venda</span>
+                      <span class="font-display font-black text-2xl sm:text-3xl text-gradient-vice">R$ 449,90</span>
+                    </div>
+                    <ul class="space-y-3 text-xs sm:text-sm text-gray-200 mb-6">
+                      <li class="flex items-start gap-2"><span class="text-vice-pink font-bold mt-0.5">✓</span><span>Jogo base <strong>Grand Theft Auto VI</strong></span></li>
+                      <li class="flex items-start gap-2"><span class="text-vice-pink font-bold mt-0.5">✓</span><span><strong>3 dias de acesso antecipado</strong> ao jogo</span></li>
+                      <li class="flex items-start gap-2"><span class="text-vice-pink font-bold mt-0.5">✓</span><span>Pacote <strong>Vice Neon</strong> & Arsenal Dourado</span></li>
+                      <li class="flex items-start gap-2"><span class="text-vice-pink font-bold mt-0.5">✓</span><span><strong>GTA$ 1.500.000</strong> no modo Online</span></li>
+                    </ul>
+                  </div>
+                  <button type="button" class="select-edition-btn w-full py-2.5 rounded-xl bg-vice-pink text-white font-bold text-xs uppercase tracking-wider transition shadow-lg">
+                    Selecionada
+                  </button>
+                </div>
+
+                <!-- Colecionador -->
+                <div data-edition-id="collector"
+                  class="edition-card relative rounded-3xl glass-panel border-2 border-white/10 hover:border-vice-gold/60 p-6 flex flex-col justify-between transition-all cursor-pointer">
+                  <div>
+                    <div class="flex justify-between items-start mb-3">
+                      <span class="px-2.5 py-1 rounded-lg bg-vice-gold/15 text-vice-gold text-[11px] font-bold uppercase tracking-wider border border-vice-gold/30">Kingpin</span>
+                      <div class="edition-radio w-5 h-5 rounded-full border-2 border-gray-500 flex items-center justify-center">
+                        <div class="w-2.5 h-2.5 rounded-full bg-vice-gold hidden"></div>
+                      </div>
+                    </div>
+                    <h3 class="font-display font-black text-xl text-gradient-gold mb-1">Colecionador</h3>
+                    <p class="text-xs text-gray-400 mb-4">Edição definitiva Leonida Kingpin.</p>
+                    <div class="mb-5 pb-4 border-b border-white/10">
+                      <span class="text-xs text-gray-400 block">Valor da Pré-Venda</span>
+                      <span class="font-display font-black text-2xl sm:text-3xl text-white">R$ 599,90</span>
+                    </div>
+                    <ul class="space-y-3 text-xs sm:text-sm text-gray-300 mb-6">
+                      <li class="flex items-start gap-2"><span class="text-vice-gold font-bold mt-0.5">★</span><span><strong>Tudo da Edição Deluxe</strong> incluso</span></li>
+                      <li class="flex items-start gap-2"><span class="text-vice-gold font-bold mt-0.5">✓</span><span><strong>Mapa Físico/Digital</strong> de Leonida</span></li>
+                      <li class="flex items-start gap-2"><span class="text-vice-gold font-bold mt-0.5">✓</span><span><strong>Steelbook Exclusivo</strong> & Trilha Oficial</span></li>
+                      <li class="flex items-start gap-2"><span class="text-vice-gold font-bold mt-0.5">✓</span><span><strong>GTA$ 3.000.000</strong> + Mansão inicial</span></li>
+                    </ul>
+                  </div>
+                  <button type="button" class="select-edition-btn w-full py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs uppercase tracking-wider transition">
+                    Selecionar Kingpin
+                  </button>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Coluna Direita: Resumo do Pedido & Checkout -->
+          <aside id="comprar-agora" class="lg:col-span-4 lg:sticky lg:top-24">
+            <div class="rounded-3xl glass-panel border border-white/15 p-6 sm:p-7 shadow-2xl">
+              <div class="flex items-center justify-between pb-4 mb-5 border-b border-white/10">
+                <h3 class="font-display font-black text-lg uppercase tracking-wider text-white">
+                  Resumo do Pedido
+                </h3>
+                <span class="px-2.5 py-1 rounded-md bg-emerald-500/15 text-emerald-400 text-[11px] font-bold uppercase">
+                  Estoque Garantido
+                </span>
+              </div>
+
+              <div class="space-y-4 mb-6">
+                <div class="p-4 rounded-2xl bg-black/35 border border-white/10">
+                  <span class="text-[11px] uppercase tracking-wider text-vice-cyan font-bold block" id="summary-platform">
+                    PlayStation 5
+                  </span>
+                  <h4 class="font-display font-bold text-base text-white" id="summary-edition-name">
+                    GTA VI - Edição Deluxe (Vice City)
+                  </h4>
+                  <div class="mt-3 pt-3 border-t border-white/10">
+                    <p class="text-[11px] font-semibold uppercase tracking-wider text-gray-400 mb-2">Itens Inclusos:</p>
+                    <ul id="summary-items-list" class="space-y-1.5 text-xs text-gray-300"></ul>
+                  </div>
+                </div>
+
+                <div>
+                  <label class="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-2.5">
+                    Forma de Pagamento
+                  </label>
+                  <div class="grid grid-cols-3 gap-2" id="payment-selector">
+                    <button type="button" data-payment="PIX (Aprovação Imediata)" data-payment-short="PIX"
+                      class="payment-btn py-2.5 px-2 rounded-xl border-2 border-vice-cyan bg-vice-cyan/15 text-white font-bold text-xs flex flex-col items-center justify-center gap-1 transition cursor-pointer">
+                      <span>⚡ PIX</span>
+                      <span class="text-[10px] text-vice-cyan font-normal">Instantâneo</span>
+                    </button>
+                    <button type="button" data-payment="Cartão de Crédito (até 12x)" data-payment-short="Cartão de Crédito"
+                      class="payment-btn py-2.5 px-2 rounded-xl border-2 border-white/10 bg-white/5 hover:border-white/30 text-gray-300 font-bold text-xs flex flex-col items-center justify-center gap-1 transition cursor-pointer">
+                      <span>💳 Cartão</span>
+                      <span class="text-[10px] text-gray-400 font-normal">Até 12x</span>
+                    </button>
+                    <button type="button" data-payment="Boleto Digital (60 dias)" data-payment-short="Boleto Digital"
+                      class="payment-btn py-2.5 px-2 rounded-xl border-2 border-white/10 bg-white/5 hover:border-white/30 text-gray-300 font-bold text-xs flex flex-col items-center justify-center gap-1 transition cursor-pointer">
+                      <span>📄 Boleto</span>
+                      <span class="text-[10px] text-vice-gold font-normal">1ª em 60d</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="space-y-2 pt-4 border-t border-white/10 mb-6">
+                <div class="flex justify-between text-xs text-gray-400">
+                  <span>Subtotal</span>
+                  <span id="summary-subtotal">R$ 449,90</span>
+                </div>
+                <div class="flex justify-between text-xs text-gray-400">
+                  <span>Entrega Digital / Taxas</span>
+                  <span class="text-emerald-400 font-semibold">GRÁTIS</span>
+                </div>
+                <div class="flex justify-between items-baseline pt-2">
+                  <span class="font-display font-bold text-sm uppercase text-white">Total a Pagar</span>
+                  <div class="text-right">
+                    <span id="summary-total" class="font-display font-black text-3xl text-white">R$ 449,90</span>
+                    <span id="summary-installments" class="block text-[11px] text-vice-cyan">À vista via PIX</span>
+                  </div>
+                </div>
+              </div>
+
+              <button type="button" id="btn-checkout"
+                class="btn-vice-primary w-full py-4 px-6 rounded-2xl font-display font-black text-sm uppercase tracking-wider text-white shadow-xl flex items-center justify-center gap-2 cursor-pointer">
+                <span id="btn-checkout-text">COMPRAR AGORA • RESERVAR PRÉ-VENDA</span>
+              </button>
+
+              <p class="text-[11px] text-center text-gray-400 mt-4 leading-relaxed">
+                Simulação interativa de loja oficial. Nenhuma cobrança real será efetuada.
+              </p>
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         PÁGINA 03: MÍDIA & GALERIA
+         =================================================================== -->
+    <section id="page-galeria" class="spa-page gallery-ambient">
+      <div class="pt-12 pb-8 px-4 sm:px-6 text-center max-w-4xl mx-auto">
+        <span class="inline-block text-xs font-bold tracking-[0.25em] uppercase text-vice-orange mb-2">
+          Bem-vindo ao Estado de Leonida
+        </span>
+        <h1 class="font-display font-black text-3xl sm:text-5xl uppercase leading-tight mb-4 text-gradient-vice">
+          Galeria Oficial & Trailer
+        </h1>
+        <p class="text-gray-300 text-base sm:text-lg leading-relaxed">
+          Explore as capturas de tela em alta definição, artes oficiais de Jason e Lucia e o trailer cinematográfico pelas praias néon de Vice City. Clique em qualquer imagem para ampliar ou alternar entre as cenas.
+        </p>
+      </div>
+
+      <!-- Trailer Oficial -->
+      <div id="trailer-oficial-box" class="max-w-6xl mx-auto px-4 sm:px-6 mb-14">
+        <div class="flex flex-wrap justify-between items-center gap-3 mb-4">
+          <h2 class="font-display font-extrabold text-xl sm:text-2xl uppercase flex items-center gap-3">
+            <span class="w-1.5 h-6 rounded bg-gradient-to-b from-vice-pink to-vice-orange inline-block"></span>
+            Trailer Oficial — Leonida & Vice City
+          </h2>
+          <span class="bg-gradient-to-r from-vice-pink to-vice-orange px-4 py-1.5 rounded-full font-extrabold text-xs tracking-wider uppercase">
+            19 de Novembro de 2026
+          </span>
+        </div>
+
+        <div class="rounded-t-2xl overflow-hidden border-2 border-vice-pink/50 border-b-0 shadow-2xl bg-black aspect-video relative">
+          <iframe
+            class="w-full h-full block"
+            src="https://www.youtube.com/embed/QdBZY2fkU-0?rel=0"
+            title="Grand Theft Auto VI — Trailer 1 Oficial (YouTube)"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <div class="flex flex-wrap justify-between items-center gap-4 bg-[#160922] px-6 py-4 rounded-b-2xl border-2 border-vice-pink/50 border-t border-t-white/10">
+          <div>
+            <strong class="block text-base text-white">Grand Theft Auto VI — Trailer Oficial</strong>
+            <small class="text-gray-400 text-sm">Jason Duval e Lucia Caminos enfrentam uma conspiração criminosa por todo o estado de Leonida.</small>
+          </div>
+          <div class="flex flex-wrap items-center gap-2.5">
+            <a href="https://www.youtube.com/watch?v=QdBZY2fkU-0" target="_blank" rel="noopener noreferrer"
+              class="btn-vice-primary px-4 py-2 rounded-xl font-bold text-xs sm:text-sm inline-flex items-center gap-2 shadow-lg">
+              <span>▶</span> Abrir no YouTube
+            </a>
+            <button type="button" class="btn-control active" onclick="openLightbox(0)">Ampliar Arte da Capa</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Galeria Interativa (Grade & Carrossel) -->
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 pb-16">
+        <div class="flex flex-wrap justify-between items-center gap-3 mb-5">
+          <h2 class="font-display font-extrabold text-xl sm:text-2xl uppercase flex items-center gap-3">
+            <span class="w-1.5 h-6 rounded bg-gradient-to-b from-vice-pink to-vice-orange inline-block"></span>
+            Capturas de Tela & Artes Oficiais
+          </h2>
+        </div>
+
+        <!-- Barra de Filtros e Modo de Visualização -->
+        <div class="flex flex-wrap justify-between items-center gap-4 mb-8 bg-[#160922]/90 p-4 rounded-2xl border border-white/10">
+          <div class="flex flex-wrap gap-2" role="group" aria-label="Filtrar categoria">
+            <button type="button" class="btn-control active" data-filter="todos">Todas as Mídias (5)</button>
+            <button type="button" class="btn-control" data-filter="arte">Arte Oficial</button>
+            <button type="button" class="btn-control" data-filter="personagens">Personagens</button>
+            <button type="button" class="btn-control" data-filter="mundo">Vice City & Leonida</button>
+          </div>
+
+          <div class="flex gap-2" role="group" aria-label="Modo de visualização">
+            <button type="button" class="btn-control active" id="btnGrid" onclick="setViewMode('grid')">Grade</button>
+            <button type="button" class="btn-control" id="btnCarousel" onclick="setViewMode('carousel')">Carrossel</button>
+          </div>
+        </div>
+
+        <!-- Visualização em Grade -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="galleryGrid"></div>
+
+        <!-- Visualização em Carrossel -->
+        <div class="hidden bg-[#160922] rounded-2xl border border-vice-pink/40 overflow-hidden shadow-2xl" id="carouselView">
+          <div class="relative w-full aspect-video bg-black overflow-hidden">
+            <button type="button" onclick="changeSlide(-1)" aria-label="Imagem anterior"
+              class="absolute left-4 top-1/2 -translate-y-1/2 bg-[#09040e]/85 hover:bg-vice-pink border border-vice-pink text-white w-12 h-12 rounded-full text-xl cursor-pointer z-10 transition">
+              &#10094;
+            </button>
+            <img id="carouselImg" src="" alt="" onclick="openLightbox(currentCarouselIndex)" class="w-full h-full object-cover cursor-zoom-in" />
+            <button type="button" onclick="changeSlide(1)" aria-label="Próxima imagem"
+              class="absolute right-4 top-1/2 -translate-y-1/2 bg-[#09040e]/85 hover:bg-vice-pink border border-vice-pink text-white w-12 h-12 rounded-full text-xl cursor-pointer z-10 transition">
+              &#10095;
+            </button>
+          </div>
+
+          <div class="p-6 flex flex-wrap justify-between items-center gap-4 border-t border-white/10">
+            <div>
+              <span class="text-xs font-extrabold uppercase tracking-widest text-vice-orange block mb-1" id="carouselCat"></span>
+              <h3 class="font-display text-lg font-extrabold text-white mb-1" id="carouselTitle"></h3>
+              <p class="text-sm text-gray-300" id="carouselDesc"></p>
+            </div>
+            <button type="button" class="btn-control active" onclick="openLightbox(currentCarouselIndex)">Ampliar em Tela Cheia</button>
+          </div>
+
+          <div class="flex gap-3 px-6 pb-6 overflow-x-auto" id="carouselThumbs"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         PÁGINA 04: SOBRE O JOGO
+         =================================================================== -->
+    <section id="page-sobre" class="spa-page">
+      <div class="relative leonida-banner-bg py-20 sm:py-32 overflow-hidden border-b border-vice-pink/30">
+        <div class="absolute inset-0 bg-gradient-to-t from-[#0d0618] via-transparent to-[#240738]/60 pointer-events-none"></div>
+        <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-vice-purple/80 border border-vice-gold/50 text-xs font-bold uppercase tracking-widest text-vice-gold mb-6 shadow-lg backdrop-blur-md">
+            <span>🌴</span> Universo • Personagens • Nova Geração
+          </div>
+          <span class="block font-condensed font-bold tracking-[0.3em] text-sm sm:text-lg text-vice-gold uppercase mb-2">
+            Grand Theft Auto VI
+          </span>
+          <h1 class="font-display font-black italic text-4xl sm:text-6xl tracking-tight leading-tight text-white uppercase drop-shadow-[0_6px_28px_rgba(255,42,133,0.85)] mb-6">
+            Bem-vindo ao Estado de
+            <span class="block text-gradient-gold">Leonida</span>
+          </h1>
+          <p class="text-gray-100 text-base sm:text-xl leading-relaxed max-w-3xl mx-auto mb-9">
+            Das praias banhadas pelo néon de <strong class="text-vice-gold">Vice City</strong> aos pântanos traiçoeiros de Grassrivers, conheça a história, os protagonistas e as mecânicas que redefinem os jogos de mundo aberto.
+          </p>
+          <div class="flex flex-wrap items-center justify-center gap-4">
+            <a href="#sobre-historia" class="px-6 py-3.5 rounded-2xl glass-panel border border-vice-pink/50 hover:border-vice-gold text-white font-display font-bold uppercase tracking-wider text-xs sm:text-sm transition">
+              Explorar Universo ↓
+            </a>
+            <button type="button" onclick="navigateTo('loja')" class="btn-vice-gold px-7 py-3.5 rounded-2xl font-display font-black uppercase tracking-wider text-xs sm:text-sm shadow-xl cursor-pointer">
+              Garantir Minha Cópia
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 space-y-16">
+        
+        <div class="rounded-3xl glass-panel border border-vice-gold/40 p-6 sm:p-8 neon-gold-glow">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+            <div>
+              <span class="inline-block px-3 py-1 rounded-full bg-vice-gold/20 text-vice-gold text-xs font-bold uppercase tracking-widest mb-3">
+                Por que jogar GTA VI? • Explicar & Valorizar
+              </span>
+              <h2 class="font-display font-black text-xl sm:text-2xl text-white mb-2">
+                Tudo o que torna Grand Theft Auto VI um marco histórico
+              </h2>
+              <p class="text-sm sm:text-base text-gray-300 leading-relaxed max-w-4xl">
+                Conheça os pilares essenciais da experiência — <strong class="text-white">história</strong>, <strong class="text-vice-gold">universo</strong>, <strong class="text-vice-pink">personagens</strong>, <strong class="text-purple-300">mecânicas</strong> e <strong class="text-vice-gold">diferenciais técnicos</strong> — antes de finalizar sua reserva na loja.
+              </p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-1 gap-2 shrink-0 text-xs font-bold uppercase tracking-wider">
+              <a href="#sobre-historia" class="px-3.5 py-2 rounded-xl bg-white/5 hover:bg-vice-pink/20 text-vice-pink border border-vice-pink/30 text-center transition">• História & Universo</a>
+              <a href="#sobre-personagens" class="px-3.5 py-2 rounded-xl bg-white/5 hover:bg-vice-gold/20 text-vice-gold border border-vice-gold/30 text-center transition">• Personagens</a>
+              <a href="#sobre-mecanicas" class="px-3.5 py-2 rounded-xl bg-white/5 hover:bg-purple-500/20 text-purple-300 border border-purple-400/30 text-center transition">• Mecânicas & Diferenciais</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 01. História e Universo -->
+        <div id="sobre-historia">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="w-9 h-9 rounded-xl bg-gradient-to-br from-vice-pink to-vice-purple text-white font-display font-black text-sm flex items-center justify-center shadow-lg">01</span>
+            <h2 class="font-display font-black text-2xl sm:text-3xl uppercase tracking-wide text-white">
+              História & <span class="text-gradient-vice">Universo</span>
+            </h2>
+          </div>
+          <p class="text-gray-300 text-sm sm:text-base mb-8 max-w-3xl">
+            Uma trama inspirada em Bonnie e Clyde no estado mais ensolarado — e perigoso — da América.
+          </p>
+
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+            <div class="lg:col-span-7 rounded-3xl glass-panel border border-vice-pink/30 p-7 sm:p-8 flex flex-col justify-between neon-pink-glow">
+              <div>
+                <span class="inline-block px-3 py-1 rounded-lg bg-vice-pink/20 text-vice-pink text-xs font-bold uppercase tracking-wider mb-4">
+                  Conspiração Criminosa
+                </span>
+                <h3 class="font-display font-black text-2xl text-white mb-4">
+                  Sobrevivendo ao Submundo de Vice City
+                </h3>
+                <p class="text-gray-200 leading-relaxed mb-4">
+                  Quando um golpe aparentemente simples dá errado, <strong class="text-vice-gold">Lucia Caminos</strong> e <strong class="text-vice-pink">Jason Duval</strong> se veem no centro de uma conspiração que atravessa todo o estado de Leonida.
+                </p>
+                <p class="text-gray-300 leading-relaxed">
+                  Cercados por gangues locais, cartéis e uma força policial implacável, os dois precisarão confiar um no outro mais do que nunca para escapar com vida — e conquistar o topo.
+                </p>
+              </div>
+
+              <div class="mt-6 pt-5 border-t border-white/10 flex flex-wrap gap-3 text-xs font-semibold">
+                <span class="px-3 py-1.5 rounded-xl bg-vice-purple/60 text-vice-gold border border-vice-gold/30">Mapa 2x maior que Los Santos</span>
+                <span class="px-3 py-1.5 rounded-xl bg-vice-purple/60 text-vice-pink border border-vice-pink/30">+70% dos edifícios acessíveis</span>
+              </div>
+            </div>
+
+            <div class="lg:col-span-5 space-y-4">
+              <div class="rounded-2xl glass-panel p-5 border-l-4 border-vice-pink">
+                <h4 class="font-display font-bold text-lg text-vice-pink">Vice City</h4>
+                <p class="text-xs sm:text-sm text-gray-300 mt-1">
+                  Das praias luxuosas de Ocean Beach aos clubes noturnos néon e às ruas vibrantes de Little Cuba.
+                </p>
+              </div>
+
+              <div class="rounded-2xl glass-panel p-5 border-l-4 border-vice-gold">
+                <h4 class="font-display font-bold text-lg text-vice-gold">Leonida Keys & Grassrivers</h4>
+                <p class="text-xs sm:text-sm text-gray-300 mt-1">
+                  Arquipélagos tropicais e pântanos selvagens repletos de jacarés, contrabandistas e mistérios.
+                </p>
+              </div>
+
+              <div class="rounded-2xl glass-panel p-5 border-l-4 border-purple-400">
+                <h4 class="font-display font-bold text-lg text-purple-300">Port Gellhorn & Mount Kalaga</h4>
+                <p class="text-xs sm:text-sm text-gray-300 mt-1">
+                  Zonas industriais abandonadas e parques nacionais com trilhas off-road, caça e esportes radicais.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 02. Personagens (PÁGINA 04) -->
+        <div id="sobre-personagens">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="w-9 h-9 rounded-xl bg-gradient-to-br from-vice-gold to-vice-pink text-[#0d0618] font-display font-black text-sm flex items-center justify-center shadow-lg">02</span>
+            <h2 class="font-display font-black text-2xl sm:text-3xl uppercase tracking-wide text-white">
+              Protagonistas & <span class="text-gradient-gold">Aliados</span>
+            </h2>
+          </div>
+          <p class="text-gray-300 text-sm sm:text-base mb-8">
+            Pela primeira vez na franquia, controle uma dupla unida pelo crime e pelo romance.
+          </p>
+
+          <div class="grid grid-cols-1 xl:grid-cols-2 gap-6 mb-6">
+            <!-- Lucia Caminos (Lucia foto.webp) -->
+            <article class="rounded-3xl glass-panel border-2 border-vice-pink/40 hover:border-vice-pink p-6 transition-all neon-pink-glow flex flex-col sm:flex-row items-start gap-6">
+              <div class="w-full sm:w-44 h-60 shrink-0 rounded-2xl overflow-hidden border-2 border-vice-pink/60 relative bg-[#160922]">
+                <img
+                  src="Lucia foto.webp"
+                  alt="Lucia Caminos"
+                  data-fallbacks="./Lucia%20foto.webp,Lucia%20foto.webp,img/Lucia%20foto.webp,images/Lucia%20foto.webp,assets/Lucia%20foto.webp"
+                  onerror="tryNextImage(this)"
+                  class="w-full h-full object-cover object-top"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-[#0d0618]/80 via-transparent to-transparent pointer-events-none"></div>
+                <span class="absolute bottom-2 left-2 right-2 text-center text-[10px] font-display font-black uppercase tracking-widest bg-vice-pink text-white py-0.5 rounded-md">
+                  Lucia
+                </span>
+              </div>
+
+              <div class="flex-1 min-w-0">
+                <span class="inline-block px-3 py-1 rounded-full bg-vice-pink/20 text-vice-pink text-[11px] font-bold uppercase tracking-wider">
+                  Protagonista 01
+                </span>
+                <h3 class="font-display font-black text-2xl text-white mt-2.5 mb-2">Lucia Caminos</h3>
+                <p class="text-sm text-gray-300 leading-relaxed mb-4">
+                  Recém-saída da penitenciária de Leonida e especialista em combate corpo a corpo. Determinada e estratégica, Lucia está disposta a tudo para garantir um futuro melhor para sua família.
+                </p>
+                <div class="text-xs font-semibold text-vice-pink">Especialidade: Planejamento & Combate</div>
+              </div>
+            </article>
+
+            <!-- Jason Duval (jason duval foto.jpg) -->
+            <article class="rounded-3xl glass-panel border-2 border-vice-gold/40 hover:border-vice-gold p-6 transition-all neon-gold-glow flex flex-col sm:flex-row items-start gap-6">
+              <div class="w-full sm:w-44 h-60 shrink-0 rounded-2xl overflow-hidden border-2 border-vice-gold/60 relative bg-[#160922]">
+                <img
+                  src="jason%20duval%20foto.jpg"
+                  alt="Jason Duval"
+                  data-fallbacks="jason duval foto.jpg,./jason%20duval%20foto.jpg,jason%20duval%20foto.JPG,Jason%20duval%20foto.jpg,Jason%20Duval%20foto.jpg,jason%20duval%20foto.jpeg,jason%20duval%20foto.png,jason%20duval%20foto.webp,jason%20duval%20foto.jpg.jpg,img/jason%20duval%20foto.jpg,images/jason%20duval%20foto.jpg,assets/jason%20duval%20foto.jpg"
+                  onerror="tryNextImage(this)"
+                  class="w-full h-full object-cover object-top"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-[#0d0618]/80 via-transparent to-transparent pointer-events-none"></div>
+                <span class="absolute bottom-2 left-2 right-2 text-center text-[10px] font-display font-black uppercase tracking-widest bg-vice-gold text-[#0d0618] py-0.5 rounded-md">
+                  Jason
+                </span>
+              </div>
+
+              <div class="flex-1 min-w-0">
+                <span class="inline-block px-3 py-1 rounded-full bg-vice-gold/20 text-vice-gold text-[11px] font-bold uppercase tracking-wider">
+                  Protagonista 02
+                </span>
+                <h3 class="font-display font-black text-2xl text-white mt-2.5 mb-2">Jason Duval</h3>
+                <p class="text-sm text-gray-300 leading-relaxed mb-4">
+                  Ex-militar com experiência no transporte ilícito pelas Keys. Queria deixar a vida criminosa para trás, mas sua lealdade a Lucia o coloca nos maiores assaltos de Vice City.
+                </p>
+                <div class="text-xs font-semibold text-vice-gold">Especialidade: Pilotagem & Táticas Armadas</div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Elenco de Apoio -->
+          <article class="rounded-3xl glass-panel border-2 border-purple-500/40 hover:border-purple-400 p-6 transition-all">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <div>
+                <span class="px-3 py-1 rounded-full bg-purple-500/20 text-purple-300 text-[11px] font-bold uppercase tracking-wider">
+                  Elenco de Apoio
+                </span>
+                <h3 class="font-display font-black text-xl text-white mt-3 mb-1">Figuras de Leonida</h3>
+                <p class="text-sm text-gray-300 leading-relaxed">
+                  Forje alianças com <strong class="text-white">Boobie Ike</strong> (magnata das casas noturnas), <strong class="text-white">Raul Bautista</strong> (assaltante veterano) e <strong class="text-white">Cal Hampton</strong>, hacker e informante local.
+                </p>
+              </div>
+              <div class="text-xs font-semibold text-purple-300 shrink-0 px-4 py-2.5 rounded-xl bg-purple-500/10 border border-purple-400/30">
+                Contatos, Missões Secundárias & Mercado Negro
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- 03. Mecânicas e Diferenciais -->
+        <div id="sobre-mecanicas">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="w-9 h-9 rounded-xl bg-purple-600 text-white font-display font-black text-sm flex items-center justify-center shadow-lg">03</span>
+            <h2 class="font-display font-black text-2xl sm:text-3xl uppercase tracking-wide text-white">
+              Mecânicas & <span class="text-gradient-vice">Diferenciais</span>
+            </h2>
+          </div>
+          <p class="text-gray-300 text-sm sm:text-base mb-8">
+            Inovações técnicas desenvolvidas exclusivamente para extrair o máximo da nova geração.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div class="rounded-2xl glass-panel p-6 border border-vice-pink/25">
+              <div class="text-2xl mb-3">⚡</div>
+              <h4 class="font-display font-bold text-lg text-vice-gold mb-2">Troca Dinâmica & Vínculo</h4>
+              <p class="text-xs sm:text-sm text-gray-300">
+                Alterne instantaneamente entre Jason e Lucia. As escolhas da dupla alteram a confiança mútua e desbloqueiam diálogos e finais diferentes.
+              </p>
+            </div>
+
+            <div class="rounded-2xl glass-panel p-6 border border-vice-pink/25">
+              <div class="text-2xl mb-3">🚨</div>
+              <h4 class="font-display font-bold text-lg text-vice-pink mb-2">Polícia Inteligente</h4>
+              <p class="text-xs sm:text-sm text-gray-300">
+                As autoridades memorizam placas, modelos de carros e roupas. Trocar de veículo e mudar o visual faz diferença real nas fugas.
+              </p>
+            </div>
+
+            <div class="rounded-2xl glass-panel p-6 border border-vice-pink/25">
+              <div class="text-2xl mb-3">🌴</div>
+              <h4 class="font-display font-bold text-lg text-purple-300 mb-2">Clima Extremo RAGE 9</h4>
+              <p class="text-xs sm:text-sm text-gray-300">
+                Tempestades tropicais, ventos que afetam a dirigibilidade, reflexos néon em tempo real e física de água hiper-realista.
+              </p>
+            </div>
+
+            <div class="rounded-2xl glass-panel p-6 border border-vice-pink/25">
+              <div class="text-2xl mb-3">📱</div>
+              <h4 class="font-display font-bold text-lg text-vice-gold mb-2">Vida Social Conectada</h4>
+              <p class="text-xs sm:text-sm text-gray-300">
+                Rede social integrada dentro do jogo onde NPCs gravam seus feitos, além de atividades como basquete, academia, corridas e mergulho.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Banner Final de Conversão para a Loja -->
+        <div class="rounded-3xl p-1 bg-gradient-to-r from-vice-purple via-vice-pink to-vice-gold shadow-2xl">
+          <div class="rounded-[22px] bg-[#130724]/95 px-6 py-10 sm:px-12 sm:py-12 flex flex-col lg:flex-row items-center justify-between gap-6 text-center lg:text-left">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-widest text-vice-gold">Pronto para entrar em Vice City?</span>
+              <h2 class="font-display font-black text-2xl sm:text-4xl text-white mt-1">
+                Garanta a Experiência Definitiva de Nova Geração
+              </h2>
+              <p class="text-sm sm:text-base text-gray-300 mt-2 max-w-xl">
+                Com uma campanha cinematográfica dupla, o maior mapa da franquia e mecânicas inéditas de inteligência artificial, GTA VI entrega centenas de horas de conteúdo nas edições Standard, Deluxe e Colecionador.
+              </p>
+            </div>
+
+            <button type="button" onclick="navigateTo('loja')"
+              class="btn-vice-gold px-8 py-4 rounded-2xl font-display font-black uppercase tracking-wider text-sm sm:text-base whitespace-nowrap shadow-xl cursor-pointer">
+              Ir para a Loja Oficial →
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+
+  <!-- =====================================================================
+       RODAPÉ UNIFICADO
+       ===================================================================== -->
+  <footer class="border-t border-vice-pink/30 bg-[#080310] py-10 px-4 sm:px-8 mt-auto">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="text-center md:text-left">
+        <div class="flex items-center justify-center md:justify-start gap-2 mb-1">
+          <span class="font-display font-black text-lg text-white">GRAND THEFT AUTO <span class="text-gradient-vice">VI</span></span>
+          <span class="text-gray-500">•</span>
+          <span class="text-xs font-bold uppercase tracking-wider text-vice-cyan">Estado de Leonida</span>
+        </div>
+        <p class="text-xs text-gray-400">
+          Portal Oficial Unificado • Lançamento Mundial: 19 de Novembro de 2026. Ambiente demonstrativo.
+        </p>
+      </div>
+
+      <div class="flex flex-wrap justify-center gap-4 text-xs font-bold uppercase tracking-wider text-gray-300">
+        <button type="button" onclick="navigateTo('inicio')" class="hover:text-vice-gold transition cursor-pointer">01. Início</button>
+        <button type="button" onclick="navigateTo('loja')" class="hover:text-vice-gold transition cursor-pointer">02. Loja</button>
+        <button type="button" onclick="navigateTo('galeria')" class="hover:text-vice-gold transition cursor-pointer">03. Mídia & Galeria</button>
+        <button type="button" onclick="navigateTo('sobre')" class="hover:text-vice-gold transition cursor-pointer">04. Sobre o Jogo</button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =====================================================================
+       MODAL DE CONFIRMAÇÃO DE COMPRA (PÁGINA 02 - LOJA)
+       ===================================================================== -->
+  <div id="confirmation-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+    <div class="animate-modal relative w-full max-w-lg rounded-3xl p-1 bg-gradient-to-br from-vice-cyan via-vice-pink to-vice-gold shadow-2xl">
+      <div class="rounded-[22px] bg-[#120722] p-6 sm:p-8 text-white relative overflow-hidden">
+        
+        <button type="button" id="btn-close-modal-x" aria-label="Fechar janela"
+          class="absolute top-5 right-5 w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-gray-300 hover:text-white transition cursor-pointer">
+          ✕
+        </button>
+
+        <div class="text-center mb-6">
+          <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-emerald-400 to-vice-cyan flex items-center justify-center text-3xl text-[#0d0618] font-black shadow-[0_0_30px_rgba(0,229,255,0.5)]">
+            ✓
+          </div>
+          <span class="inline-block px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold uppercase tracking-widest mb-2 border border-emerald-500/30">
+            Pré-Venda Confirmada!
+          </span>
+          <h2 class="font-display font-black text-2xl sm:text-3xl uppercase tracking-tight text-white">
+            Bem-vindo a <span class="text-gradient-vice">Vice City</span>
+          </h2>
+          <p class="text-xs sm:text-sm text-gray-300 mt-1">
+            Sua reserva oficial de Grand Theft Auto VI foi registrada com sucesso.
+          </p>
+        </div>
+
+        <div class="rounded-2xl bg-black/45 border border-white/10 p-5 space-y-3 mb-6 text-sm">
+          <div class="flex justify-between items-center pb-2.5 border-b border-white/10">
+            <span class="text-gray-400 text-xs uppercase font-semibold">Número do Pedido</span>
+            <span id="modal-order-id" class="font-mono font-bold text-vice-gold text-base">#GTA6-84920</span>
+          </div>
+          <div class="flex justify-between items-center">
+            <span class="text-gray-400 text-xs">Edição Adquirida</span>
+            <span id="modal-edition" class="font-bold text-white text-right">Edição Deluxe (Vice City)</span>
+          </div>
+          <div class="flex justify-between items-center">
+            <span class="text-gray-400 text-xs">Plataforma</span>
+            <span id="modal-platform" class="font-bold text-vice-cyan">PlayStation 5</span>
+          </div>
+          <div class="flex justify-between items-center">
+            <span class="text-gray-400 text-xs">Pagamento</span>
+            <span id="modal-payment" class="font-medium text-gray-200">PIX</span>
+          </div>
+          <div class="flex justify-between items-center pt-2.5 border-t border-white/10">
+            <span class="text-gray-300 font-bold text-xs uppercase">Total</span>
+            <span id="modal-total" class="font-display font-black text-xl text-emerald-400">R$ 449,90</span>
+          </div>
+        </div>
+
+        <div class="mb-6">
+          <label class="block text-[11px] font-bold uppercase tracking-wider text-gray-400 mb-2">
+            Chave Digital de Pré-Venda (Clique para copiar)
+          </label>
+          <div class="flex items-center gap-2 p-2.5 rounded-xl bg-vice-purple/40 border border-vice-pink/40">
+            <code id="modal-redeem-code" class="flex-1 font-mono text-xs sm:text-sm font-bold text-vice-cyan tracking-wider px-2 select-all">
+              VICE-2026-LEON-994X
+            </code>
+            <button type="button" id="btn-copy-code"
+              class="px-3.5 py-2 rounded-lg bg-vice-pink hover:bg-vice-orange text-white font-bold text-xs uppercase tracking-wider transition cursor-pointer shrink-0">
+              Copiar
+            </button>
+          </div>
+          <p id="copy-feedback" class="text-[11px] text-emerald-400 font-medium mt-1.5 h-4 opacity-0 transition-opacity">
+            ✓ Código copiado para a área de transferência!
+          </p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-3">
+          <button type="button" id="btn-new-simulation"
+            class="w-full py-3.5 px-5 rounded-xl btn-vice-primary font-display font-bold text-xs sm:text-sm uppercase tracking-wider text-white cursor-pointer">
+            Fazer Nova Simulação
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       LIGHTBOX TELA CHEIA (PÁGINA 03 - GALERIA)
+       ===================================================================== -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visualizador ampliado">
+    <div class="flex justify-between items-center gap-4">
+      <span class="font-bold text-vice-cyan text-sm sm:text-base" id="lbCounter">1 / 5</span>
+      <div class="flex gap-2">
+        <button type="button" id="btnZoomToggle" onclick="toggleZoom()"
+          class="bg-white/10 hover:bg-vice-pink text-white border border-white/25 px-3.5 py-2 rounded-lg font-bold text-xs sm:text-sm transition cursor-pointer">
+          Ampliar (Zoom +)
+        </button>
+        <button type="button" onclick="closeLightbox()"
+          class="bg-white/10 hover:bg-vice-pink text-white border border-white/25 px-3.5 py-2 rounded-lg font-bold text-xs sm:text-sm transition cursor-pointer">
+          Fechar ✕
+        </button>
+      </div>
+    </div>
+
+    <div class="lb-viewport relative flex-1 flex items-center justify-center overflow-hidden my-3">
+      <button type="button" onclick="navigateLightbox(-1)" aria-label="Anterior"
+        class="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-[#160922]/90 hover:bg-vice-pink border border-vice-pink text-white w-12 h-12 rounded-full text-xl cursor-pointer z-10 transition">
+        &#10094;
+      </button>
+      <img id="lbImage" src="" alt="" onclick="toggleZoom()" />
+      <button type="button" onclick="navigateLightbox(1)" aria-label="Próxima"
+        class="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-[#160922]/90 hover:bg-vice-pink border border-vice-pink text-white w-12 h-12 rounded-full text-xl cursor-pointer z-10 transition">
+        &#10095;
+      </button>
+    </div>
+
+    <div class="text-center max-w-2xl mx-auto">
+      <h3 id="lbTitle" class="font-display font-bold text-lg sm:text-xl text-white mb-1"></h3>
+      <p id="lbDesc" class="text-gray-300 text-xs sm:text-sm"></p>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       SCRIPT UNIFICADO: NAVEGAÇÃO ENTRE AS 4 PÁGINAS + LOJA + GALERIA
+       ===================================================================== -->
+  <script>
+    /* ---------------------------------------------------------------------
+       1. SISTEMA DE NAVEGAÇÃO ENTRE AS 4 PÁGINAS (SPA)
+       --------------------------------------------------------------------- */
+    const PAGES = ['inicio', 'loja', 'galeria', 'sobre'];
+
+    function navigateTo(pageId, updateHash = true) {
+      if (!PAGES.includes(pageId)) pageId = 'inicio';
+
+      PAGES.forEach(id => {
+        const section = document.getElementById(`page-${id}`);
+        if (section) {
+          section.classList.toggle('active-page', id === pageId);
+        }
+      });
+
+      document.querySelectorAll('.nav-link').forEach(btn => {
+        const isCurrent = btn.getAttribute('data-nav') === pageId;
+        if (isCurrent) {
+          btn.className = 'nav-link px-3.5 py-2 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer whitespace-nowrap bg-vice-pink/25 text-white border border-vice-pink shadow-[0_0_15px_rgba(255,42,133,0.4)]';
+        } else {
+          btn.className = 'nav-link px-3.5 py-2 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer whitespace-nowrap text-gray-300 hover:text-white border border-transparent hover:border-white/20';
+        }
+      });
+
+      if (updateHash && window.location.hash !== `#${pageId}`) {
+        history.replaceState(null, '', `#${pageId}`);
+      }
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function goToTrailer() {
+      navigateTo('galeria');
+      setTimeout(() => {
+        const trailerBox = document.getElementById('trailer-oficial-box');
+        if (trailerBox) {
+          trailerBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 60);
+    }
+
+    // Fallback inteligente entre variações de caminho no GitHub
+    function tryNextImage(img) {
+      const list = (img.dataset.fallbacks || '').split(',').filter(Boolean);
+      const idx = parseInt(img.dataset.attempt || '0', 10);
+      if (idx < list.length) {
+        img.dataset.attempt = idx + 1;
+        img.src = list[idx];
+      }
+    }
+
+    /* ---------------------------------------------------------------------
+       2. LÓGICA DA PÁGINA 02: LOJA & PRÉ-VENDA
+       --------------------------------------------------------------------- */
+    const EDITIONS_DATA = {
+      standard: {
+        id: 'standard',
+        name: 'GTA VI - Edição Standard',
+        shortName: 'Edição Standard',
+        price: 349.90,
+        items: [
+          'Jogo Base Grand Theft Auto VI',
+          'Veículo exclusivo Pegassi Leonida',
+          'GTA$ 500.000 no modo Online'
+        ]
+      },
+      deluxe: {
+        id: 'deluxe',
+        name: 'GTA VI - Edição Deluxe (Vice City)',
+        shortName: 'Edição Deluxe (Vice City)',
+        price: 449.90,
+        items: [
+          'Jogo Base Grand Theft Auto VI',
+          '3 dias de acesso antecipado',
+          'Pacote de Roupas Vice Neon & Arsenal Dourado',
+          'GTA$ 1.500.000 no modo Online'
+        ]
+      },
+      collector: {
+        id: 'collector',
+        name: 'GTA VI - Colecionador (Leonida Kingpin)',
+        shortName: 'Colecionador (Leonida Kingpin)',
+        price: 599.90,
+        items: [
+          'Tudo da Edição Deluxe incluso',
+          'Mapa Físico & Digital de Leonida',
+          'Steelbook Exclusivo + Trilha Sonora Oficial',
+          'GTA$ 3.000.000 + Mansão inicial no Online'
+        ]
+      }
+    };
+
+    const storeState = {
+      platform: 'PlayStation 5',
+      editionId: 'deluxe',
+      payment: 'PIX (Aprovação Imediata)',
+      paymentShort: 'PIX',
+      isProcessing: false
+    };
+
+    function formatCurrencyBRL(value) {
+      return value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    }
+
+    function updateOrderSummary() {
+      const edition = EDITIONS_DATA[storeState.editionId];
+      if (!edition) return;
+
+      document.getElementById('summary-platform').textContent = storeState.platform;
+      document.getElementById('summary-edition-name').textContent = edition.name;
+
+      const formattedPrice = formatCurrencyBRL(edition.price);
+      document.getElementById('summary-subtotal').textContent = formattedPrice;
+      document.getElementById('summary-total').textContent = formattedPrice;
+
+      const installmentEl = document.getElementById('summary-installments');
+      if (storeState.paymentShort === 'Cartão de Crédito') {
+        const parcela = formatCurrencyBRL(edition.price / 12);
+        installmentEl.textContent = `ou até 12x de ${parcela} sem juros`;
+      } else if (storeState.paymentShort === 'PIX') {
+        installmentEl.textContent = 'À vista via PIX (Liberação imediata)';
+      } else {
+        installmentEl.textContent = 'R$ 0,00 hoje • 1ª parcela em 60 dias';
+      }
+
+      const itemsListEl = document.getElementById('summary-items-list');
+      itemsListEl.innerHTML = edition.items.map(item => `
+        <li class="flex items-center gap-2">
+          <span class="text-vice-pink font-bold">•</span>
+          <span>${item}</span>
+        </li>
+      `).join('');
+    }
+
+    function initStore() {
+      const platformButtons = document.querySelectorAll('.platform-btn');
+      platformButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          platformButtons.forEach(b => {
+            b.classList.remove('border-vice-cyan', 'neon-cyan-glow');
+            b.classList.add('border-white/10');
+            const iconBox = b.querySelector('div');
+            iconBox.classList.remove('bg-vice-cyan/20', 'text-vice-cyan');
+            iconBox.classList.add('bg-white/10', 'text-gray-300');
+            b.querySelector('.active-badge').classList.add('hidden');
+          });
+
+          btn.classList.remove('border-white/10');
+          btn.classList.add('border-vice-cyan', 'neon-cyan-glow');
+          const activeIconBox = btn.querySelector('div');
+          activeIconBox.classList.remove('bg-white/10', 'text-gray-300');
+          activeIconBox.classList.add('bg-vice-cyan/20', 'text-vice-cyan');
+          btn.querySelector('.active-badge').classList.remove('hidden');
+
+          storeState.platform = btn.getAttribute('data-platform');
+          updateOrderSummary();
+        });
+      });
+
+      const editionCards = document.querySelectorAll('.edition-card');
+      editionCards.forEach(card => {
+        card.addEventListener('click', () => {
+          const selectedId = card.getAttribute('data-edition-id');
+          storeState.editionId = selectedId;
+
+          editionCards.forEach(c => {
+            const cId = c.getAttribute('data-edition-id');
+            const isSelected = cId === selectedId;
+            const radioOuter = c.querySelector('.edition-radio');
+            const radioInner = radioOuter.querySelector('div');
+            const actionBtn = c.querySelector('.select-edition-btn');
+
+            c.classList.remove('border-vice-pink', 'neon-pink-glow', 'border-vice-gold', 'neon-gold-glow');
+            c.classList.add('border-white/10');
+            radioOuter.classList.remove('border-vice-pink', 'border-vice-gold');
+            radioOuter.classList.add('border-gray-500');
+            radioInner.classList.add('hidden');
+            actionBtn.className = 'select-edition-btn w-full py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs uppercase tracking-wider transition';
+
+            if (isSelected) {
+              c.classList.remove('border-white/10');
+              if (cId === 'collector') {
+                c.classList.add('border-vice-gold', 'neon-gold-glow');
+                radioOuter.classList.replace('border-gray-500', 'border-vice-gold');
+                radioInner.classList.remove('hidden');
+                actionBtn.className = 'select-edition-btn w-full py-2.5 rounded-xl bg-vice-gold text-[#0d0618] font-black text-xs uppercase tracking-wider transition shadow-lg';
+              } else {
+                c.classList.add('border-vice-pink', 'neon-pink-glow');
+                radioOuter.classList.replace('border-gray-500', 'border-vice-pink');
+                radioInner.classList.remove('hidden');
+                actionBtn.className = 'select-edition-btn w-full py-2.5 rounded-xl bg-vice-pink text-white font-bold text-xs uppercase tracking-wider transition shadow-lg';
+              }
+              actionBtn.textContent = 'Selecionada';
+            } else {
+              if (cId === 'standard') actionBtn.textContent = 'Selecionar Standard';
+              if (cId === 'deluxe') actionBtn.textContent = 'Selecionar Deluxe';
+              if (cId === 'collector') actionBtn.textContent = 'Selecionar Kingpin';
+            }
+          });
+
+          updateOrderSummary();
+        });
+      });
+
+      const payButtons = document.querySelectorAll('.payment-btn');
+      payButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          payButtons.forEach(b => {
+            b.classList.remove('border-vice-cyan', 'bg-vice-cyan/15', 'text-white');
+            b.classList.add('border-white/10', 'bg-white/5', 'text-gray-300');
+          });
+          btn.classList.remove('border-white/10', 'bg-white/5', 'text-gray-300');
+          btn.classList.add('border-vice-cyan', 'bg-vice-cyan/15', 'text-white');
+
+          storeState.payment = btn.getAttribute('data-payment');
+          storeState.paymentShort = btn.getAttribute('data-payment-short');
+          updateOrderSummary();
+        });
+      });
+
+      const btnCheckout = document.getElementById('btn-checkout');
+      const btnCheckoutText = document.getElementById('btn-checkout-text');
+      const modal = document.getElementById('confirmation-modal');
+      const btnCloseX = document.getElementById('btn-close-modal-x');
+      const btnNewSim = document.getElementById('btn-new-simulation');
+      const btnCopyCode = document.getElementById('btn-copy-code');
+      const copyFeedback = document.getElementById('copy-feedback');
+
+      btnCheckout.addEventListener('click', () => {
+        if (storeState.isProcessing) return;
+        storeState.isProcessing = true;
+
+        btnCheckout.classList.add('opacity-85', 'cursor-wait');
+        btnCheckoutText.innerHTML = `
+          <svg class="animate-spin inline-block w-5 h-5 mr-2 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+          </svg>
+          PROCESSANDO RESERVA EM LEONIDA...
+        `;
+
+        setTimeout(() => {
+          const edition = EDITIONS_DATA[storeState.editionId];
+          const randomOrderNum = Math.floor(10000 + Math.random() * 90000);
+          const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+          const block = (len) => Array.from({ length: len }, () => chars[Math.floor(Math.random() * chars.length)]).join('');
+
+          document.getElementById('modal-order-id').textContent = `#GTA6-${randomOrderNum}`;
+          document.getElementById('modal-edition').textContent = edition.shortName;
+          document.getElementById('modal-platform').textContent = storeState.platform;
+          document.getElementById('modal-payment').textContent = storeState.paymentShort;
+          document.getElementById('modal-total').textContent = formatCurrencyBRL(edition.price);
+          document.getElementById('modal-redeem-code').textContent = `VICE-${block(4)}-LEON-${block(4)}`;
+
+          copyFeedback.classList.add('opacity-0');
+          btnCopyCode.textContent = 'Copiar';
+
+          modal.classList.remove('hidden');
+          modal.classList.add('flex');
+
+          storeState.isProcessing = false;
+          btnCheckout.classList.remove('opacity-85', 'cursor-wait');
+          btnCheckoutText.textContent = 'COMPRAR AGORA • RESERVAR PRÉ-VENDA';
+        }, 850);
+      });
+
+      const closeModal = () => {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      };
+
+      btnCloseX.addEventListener('click', closeModal);
+      btnNewSim.addEventListener('click', closeModal);
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+      });
+
+      btnCopyCode.addEventListener('click', () => {
+        const codeText = document.getElementById('modal-redeem-code').textContent.trim();
+        const tempInput = document.createElement('textarea');
+        tempInput.value = codeText;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        try {
+          document.execCommand('copy');
+          btnCopyCode.textContent = 'Copiado!';
+          copyFeedback.classList.remove('opacity-0');
+        } catch (err) {
+          console.error('Erro ao copiar código:', err);
+        }
+        document.body.removeChild(tempInput);
+      });
+
+      updateOrderSummary();
+    }
+
+    /* ---------------------------------------------------------------------
+       3. LÓGICA DA PÁGINA 03: MÍDIA & GALERIA
+       (Usando exatamente os 5 arquivos enviados: capa.jpg, lucia.jpg, praia.jpg, barco.webp, lama.webp)
+       --------------------------------------------------------------------- */
+    const mediaItems = [
+      {
+        src: "capa.jpg",
+        category: "arte",
+        categoryLabel: "Arte Oficial Principal",
+        title: "Lucia Caminos & Jason Duval — Vice City",
+        desc: "Arte promocional oficial destacando a dupla protagonista nas docas ensolaradas de Vice City com helicóptero e lancha policial ao fundo.",
+        featured: true
+      },
+      {
+        src: "lucia.jpg",
+        category: "personagens",
+        categoryLabel: "Personagens",
+        title: "Lucia — Treinamento Intenso",
+        desc: "Lucia aprimora os seus golpes no saco de pancadas antes de encarar os desafios mais perigosos do submundo de Leonida.",
+        featured: false
+      },
+      {
+        src: "praia.jpg",
+        category: "mundo",
+        categoryLabel: "Vice City & Leonida",
+        title: "Vice Beach — O Coração de Vice City",
+        desc: "Areias movimentadas, motas de água, helicópteros a sobrevoar arranha-céus Art Déco e a energia vibrante da costa de Leonida.",
+        featured: false
+      },
+      {
+        src: "barco.webp",
+        category: "mundo",
+        categoryLabel: "Vice City & Leonida",
+        title: "Arquipélago de Leonida Keys",
+        desc: "Navegação em águas cristalinas rumo às ilhas tropicais do sul do estado sob nuvens carregadas no horizonte.",
+        featured: false
+      },
+      {
+        src: "lama.webp",
+        category: "mundo",
+        categoryLabel: "Cultura de Leonida",
+        title: "Thrillbilly Mud Club",
+        desc: "A lama voa alto nos eventos todo-o-terreno com camiões monstruosos e festas radicais no interior de Leonida.",
+        featured: false
+      }
+    ];
+
+    let activeFilter = "todos";
+    let filteredItems = [...mediaItems];
+    let currentLightboxIndex = 0;
+    let currentCarouselIndex = 0;
+    let isZoomed = false;
+
+    function renderGrid() {
+      const galleryGrid = document.getElementById("galleryGrid");
+      galleryGrid.innerHTML = "";
+      filteredItems.forEach((item, index) => {
+        const card = document.createElement("article");
+        card.className = `media-card ${item.featured && activeFilter === "todos" ? "featured" : ""}`;
+        card.onclick = () => openLightbox(index);
+
+        card.innerHTML = `
+          <div class="media-thumb-box">
+            <img src="${item.src}" alt="${item.title}" loading="lazy" />
+            <span class="zoom-badge">🔍 Ampliar Imagem</span>
+          </div>
+          <div class="p-5">
+            <span class="text-xs font-extrabold uppercase tracking-widest text-vice-orange block mb-1">${item.categoryLabel}</span>
+            <h3 class="font-display text-lg font-extrabold text-white mb-1.5">${item.title}</h3>
+            <p class="text-sm text-gray-300 leading-relaxed">${item.desc}</p>
+          </div>
+        `;
+        galleryGrid.appendChild(card);
+      });
+    }
+
+    function renderCarousel() {
+      if (currentCarouselIndex >= filteredItems.length) currentCarouselIndex = 0;
+      const item = filteredItems[currentCarouselIndex];
+
+      const cImg = document.getElementById("carouselImg");
+      cImg.src = item.src;
+      cImg.alt = item.title;
+
+      document.getElementById("carouselCat").textContent = item.categoryLabel;
+      document.getElementById("carouselTitle").textContent = item.title;
+      document.getElementById("carouselDesc").textContent = item.desc;
+
+      const thumbsContainer = document.getElementById("carouselThumbs");
+      thumbsContainer.innerHTML = "";
+      filteredItems.forEach((thumbItem, idx) => {
+        const thumb = document.createElement("div");
+        thumb.className = `c-thumb ${idx === currentCarouselIndex ? "active" : ""}`;
+        thumb.onclick = () => {
+          currentCarouselIndex = idx;
+          renderCarousel();
+        };
+        thumb.innerHTML = `<img src="${thumbItem.src}" alt="${thumbItem.title}" class="w-full h-full object-cover" />`;
+        thumbsContainer.appendChild(thumb);
+      });
+    }
+
+    function changeSlide(step) {
+      currentCarouselIndex = (currentCarouselIndex + step + filteredItems.length) % filteredItems.length;
+      renderCarousel();
+    }
+
+    function setViewMode(mode) {
+      const galleryGrid = document.getElementById("galleryGrid");
+      const carouselView = document.getElementById("carouselView");
+      const btnGrid = document.getElementById("btnGrid");
+      const btnCarousel = document.getElementById("btnCarousel");
+
+      if (mode === "grid") {
+        galleryGrid.style.display = "grid";
+        carouselView.classList.add("hidden");
+        btnGrid.classList.add("active");
+        btnCarousel.classList.remove("active");
+      } else {
+        galleryGrid.style.display = "none";
+        carouselView.classList.remove("hidden");
+        btnCarousel.classList.add("active");
+        btnGrid.classList.remove("active");
+        renderCarousel();
+      }
+    }
+
+    function initGallery() {
+      document.querySelectorAll("[data-filter]").forEach(btn => {
+        btn.addEventListener("click", () => {
+          document.querySelectorAll("[data-filter]").forEach(b => b.classList.remove("active"));
+          btn.classList.add("active");
+
+          activeFilter = btn.dataset.filter;
+          filteredItems = activeFilter === "todos"
+            ? [...mediaItems]
+            : mediaItems.filter(item => item.category === activeFilter);
+
+          currentCarouselIndex = 0;
+          renderGrid();
+          renderCarousel();
+        });
+      });
+
+      renderGrid();
+    }
+
+    function openLightbox(index) {
+      currentLightboxIndex = index;
+      isZoomed = false;
+      updateLightbox();
+      document.getElementById("lightbox").classList.add("open");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeLightbox() {
+      document.getElementById("lightbox").classList.remove("open");
+      document.body.style.overflow = "";
+    }
+
+    function navigateLightbox(step) {
+      currentLightboxIndex = (currentLightboxIndex + step + filteredItems.length) % filteredItems.length;
+      isZoomed = false;
+      updateLightbox();
+    }
+
+    function toggleZoom() {
+      isZoomed = !isZoomed;
+      const img = document.getElementById("lbImage");
+      const btn = document.getElementById("btnZoomToggle");
+      img.classList.toggle("zoomed", isZoomed);
+      btn.textContent = isZoomed ? "Reduzir (Zoom -)" : "Ampliar (Zoom +)";
+    }
+
+    function updateLightbox() {
+      const item = filteredItems[currentLightboxIndex];
+      const img = document.getElementById("lbImage");
+      img.classList.remove("zoomed");
+      img.src = item.src;
+      img.alt = item.title;
+
+      document.getElementById("btnZoomToggle").textContent = "Ampliar (Zoom +)";
+      document.getElementById("lbCounter").textContent = `${currentLightboxIndex + 1} / ${filteredItems.length}`;
+      document.getElementById("lbTitle").textContent = item.title;
+      document.getElementById("lbDesc").textContent = item.desc;
+    }
+
+    document.addEventListener("keydown", (e) => {
+      const lb = document.getElementById("lightbox");
+      if (!lb.classList.contains("open")) return;
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowRight") navigateLightbox(1);
+      if (e.key === "ArrowLeft") navigateLightbox(-1);
+    });
+
+    /* ---------------------------------------------------------------------
+       INICIALIZAÇÃO GERAL DO PORTAL UNIFICADO
+       --------------------------------------------------------------------- */
+    document.addEventListener("DOMContentLoaded", () => {
+      initStore();
+      initGallery();
+
+      const initialHash = window.location.hash.replace('#', '');
+      if (PAGES.includes(initialHash)) {
+        navigateTo(initialHash, false);
+      } else {
+        navigateTo('inicio', false);
+      }
+    });
+  </script>
+</body>
+</html>
